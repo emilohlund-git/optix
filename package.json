@@ -1,0 +1,11 @@
+{
+  "name": "simpli",
+  "version": "1.0.0",
+  "description": "Utility library for TypeScript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Emil Ölund",
+  "license": "ISC"
+}
