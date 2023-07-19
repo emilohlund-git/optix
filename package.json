@@ -1,11 +1,19 @@
 {
   "name": "simpli",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "version": "1.0.0",
   "description": "Utility library for TypeScript",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "release": "standard-version"
   },
   "author": "Emil Ölund",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
