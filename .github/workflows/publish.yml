@@ -1,11 +1,9 @@
 name: Publish Package to npmjs
 on:
-  push:
-    tags:
-      - "v*"
   pull_request:
     branches: [main]
     types: [closed]
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -17,7 +15,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: Install dependencies, test & build 🔧
         run: npm ci && npm run build && npm test
-      - if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') }}
+      - if: ${{ github.event_name == 'pull_request' && github.event.pull_request.merged && startsWith(github.event.pull_request.base.ref, 'refs/tags/v') }}
         name: Publish package to npm 📦
         run: npm publish
         env:
