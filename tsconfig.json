@@ -6,7 +6,8 @@
     "outDir": "dist",
     "strict": true,
     "moduleResolution": "node",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "declaration": true
   },
   "include": ["src", "test"]
 }
