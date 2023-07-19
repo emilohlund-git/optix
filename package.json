@@ -1,19 +1,23 @@
 {
-  "name": "simpli",
+  "name": "smoothie-ts",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/emilohlund-git/smoothie-ts.git"
   },
-  "version": "1.1.0",
+  "version": "1.1.4",
   "description": "Utility library for TypeScript",
   "main": "index.ts",
   "scripts": {
     "test": "jest",
+    "build": "tsc",
     "release": "standard-version"
   },
   "author": "Emil Ölund",
   "license": "ISC",
   "devDependencies": {
-    "standard-version": "^9.5.0"
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.1",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^29.1.1"
   }
 }
