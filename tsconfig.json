@@ -3,11 +3,12 @@
     "target": "esnext",
     "module": "commonjs",
     "esModuleInterop": true,
-    "outDir": "dist",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "moduleResolution": "node",
     "baseUrl": ".",
     "declaration": true
   },
-  "include": ["src", "test"]
+  "include": ["src"]
 }
