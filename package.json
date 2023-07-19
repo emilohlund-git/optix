@@ -2,13 +2,14 @@
   "name": "simpli",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/emilohlund-git/simpli.git"
   },
   "version": "1.1.0",
   "description": "Utility library for TypeScript",
   "main": "index.ts",
   "scripts": {
     "test": "jest",
+    "build": "tsc",
     "release": "standard-version"
   },
   "author": "Emil Ölund",
