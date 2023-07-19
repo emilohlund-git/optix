@@ -1,0 +1,25 @@
+name: Check if tag matches package.json version
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get package version from package.json
+        run: echo ::set-output name=version::$(node -p "require('./package.json').version")
+
+      - name: Get latest tag name
+        id: get_tag
+        run: echo ::set-output name=tag::$(git describe --abbrev=0 --tags)
+
+      - name: Compare package version with tag name
+        if: ${{ steps.get_tag.outputs.tag == steps.check-tag.outputs.version }}
+        run: |
+          echo "Package version matches the tag. Triggering the publish workflow."
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/actions/workflows/publish.yaml/dispatches \

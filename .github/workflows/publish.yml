@@ -1,8 +1,8 @@
 name: Publish Package to npmjs
 on:
-  pull_request:
-    branches: [main]
-    types: [closed]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build-and-publish:
@@ -13,10 +13,22 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://registry.npmjs.org"
-      - name: Install dependencies, test & build 🔧
+
+      - name: Install dependencies, test & build
         run: npm ci && npm run build && npm test
-      - if: ${{ github.event_name == 'pull_request' && github.event.pull_request.merged && startsWith(github.event.pull_request.base.ref, 'refs/tags/v') }}
-        name: Publish package to npm 📦
-        run: npm publish
+
+      - name: Get package version from package.json
+        id: get_version
+        run: echo ::set-output name=version::$(node -p "require('./package.json').version")
+
+      - name: Get latest tag name
+        id: get_tag
+        run: echo ::set-output name=tag::$(git describe --abbrev=0 --tags)
+
+      - name: Compare package version with tag name
+        if: ${{ github.ref == 'refs/tags/' + steps.get_tag.outputs.tag && steps.get_tag.outputs.tag == 'v' + steps.get_version.outputs.version }}
+        run: |
+          echo "Package version matches the tag. Publishing package to npm."
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
