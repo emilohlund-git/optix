@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/emilohlund-git/smoothie-ts/compare/v1.1.10...v1.2.0) (2023-07-20)
+
+
+### Features
+
+* :rocket: Implemented solid base of utility functions ([9ecea01](https://github.com/emilohlund-git/smoothie-ts/commit/9ecea01d6c4c018f1b403afd9f46a18643c43443))
+
 ### [1.1.10](https://github.com/emilohlund-git/smoothie-ts/compare/v1.1.9...v1.1.10) (2023-07-19)
 
 ### [1.1.9](https://github.com/emilohlund-git/smoothie-ts/compare/v1.1.8...v1.1.9) (2023-07-19)
