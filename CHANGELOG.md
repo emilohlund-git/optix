@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.1...v1.2.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* :bug: Didn't declare the types entry point correctly ([d4b4560](https://github.com/emilohlund-git/smoothie-ts/commit/d4b456061b92fde280358ebda3a41b61bdd539bf))
+
 ### [1.2.1](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.0...v1.2.1) (2023-07-20)
 
 ## [1.2.0](https://github.com/emilohlund-git/smoothie-ts/compare/v1.1.10...v1.2.0) (2023-07-20)
