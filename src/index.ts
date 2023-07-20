@@ -15,7 +15,8 @@ import { ArrayUtils } from "./arrays";
 import { MathUtils } from "./math";
 import { PathfindingUtils } from "./pathfinding";
 import { StringUtils } from "./strings";
+import * as types from './types';
 import { InternalUtils } from "./utils";
 
-export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils };
+export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils, types };
 
