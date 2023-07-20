@@ -1,4 +1,4 @@
-import { getWordFrequency } from "../../src";
+import { StringUtils } from "../../src";
 
 describe("StringUtils.getWordFrequency", () => {
   it("should correctly calculate word frequency for a simple sentence", () => {
@@ -14,7 +14,7 @@ describe("StringUtils.getWordFrequency", () => {
       "dog": 1,
     };
 
-    const result = getWordFrequency(sentence);
+    const result = StringUtils.frequency(sentence);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -33,7 +33,7 @@ describe("StringUtils.getWordFrequency", () => {
       "very": 1,
     };
 
-    const result = getWordFrequency(sentence);
+    const result = StringUtils.frequency(sentence);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -41,7 +41,7 @@ describe("StringUtils.getWordFrequency", () => {
     const sentence = "";
     const expectedOutput = {};
 
-    const result = getWordFrequency(sentence);
+    const result = StringUtils.frequency(sentence);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -49,7 +49,7 @@ describe("StringUtils.getWordFrequency", () => {
     const sentence = "   ";
     const expectedOutput = {};
 
-    const result = getWordFrequency(sentence);
+    const result = StringUtils.frequency(sentence);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -60,7 +60,7 @@ describe("StringUtils.getWordFrequency", () => {
       "world": 2,
     };
 
-    const result = getWordFrequency(sentence);
+    const result = StringUtils.frequency(sentence);
     expect(result).toEqual(expectedOutput);
   });
 });

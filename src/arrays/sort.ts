@@ -1,5 +1,5 @@
 import { SortOrder } from "../types";
-import { compareValues } from "../utils";
+import { compareValues } from "../utils/compareValues";
 
 /**
  * @namespace ArrayUtils

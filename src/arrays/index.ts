@@ -1,11 +1,3 @@
-/**
- * @namespace ArrayUtils
- * 
- * Array utilities for TypeScript
- * 
- * A collection of array utility functions to simplify common tasks and improve code quality in TypeScript projects.
- */
-
 import { analyzeDataArray } from "./analyzeData";
 import { averageArray } from "./average";
 import { chunkArray } from "./chunk";
@@ -20,5 +12,25 @@ import { sortArray } from "./sort";
 import { standardDeviationArray } from "./standardDeviation";
 import { sumArray } from "./sum";
 
-export { analyzeDataArray, averageArray, chunkArray, findOutliers, maxArray, medianArray, minArray, normalizeArray, rangeArray, shuffleArray, sortArray, standardDeviationArray, sumArray };
-
+/**
+ * @namespace ArrayUtils
+ * 
+ * Array utilities for TypeScript
+ * 
+ * A collection of array utility functions to simplify common tasks and improve code quality in TypeScript projects.
+ */
+export namespace ArrayUtils {
+  export const sort = sortArray;
+  export const median = medianArray;
+  export const deviation = standardDeviationArray;
+  export const sum = sumArray;
+  export const shuffle = shuffleArray;
+  export const range = rangeArray;
+  export const normalize = normalizeArray;
+  export const min = minArray;
+  export const max = maxArray;
+  export const analyze = analyzeDataArray;
+  export const average = averageArray;
+  export const chunk = chunkArray;
+  export const outliers = findOutliers;
+}

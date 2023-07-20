@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.3...v1.3.0) (2023-07-20)
+
+
+### Features
+
+* :sparkles: Added a bunch of new utilities, unit tests & documentation ([f185339](https://github.com/emilohlund-git/smoothie-ts/commit/f18533932a353f97b6a90c879312e8de52f97797))
+
 ### [1.2.3](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.2...v1.2.3) (2023-07-20)
 
 
