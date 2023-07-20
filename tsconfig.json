@@ -13,5 +13,5 @@
       "smoothie-ts/*": ["*"]
     }
   },
-  "include": ["src", "dist/index.js"]
+  "include": ["src"]
 }
