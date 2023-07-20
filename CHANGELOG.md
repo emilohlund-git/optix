@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.2...v1.2.3) (2023-07-20)
+
+
+### Bug Fixes
+
+* :bug: Fixed outliers array method ([21cc193](https://github.com/emilohlund-git/smoothie-ts/commit/21cc1939e52fa3723b0651ec6b49562cc9ffdf79))
+
 ### [1.2.2](https://github.com/emilohlund-git/smoothie-ts/compare/v1.2.1...v1.2.2) (2023-07-20)
 
 
