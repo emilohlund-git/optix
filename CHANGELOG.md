@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/emilohlund-git/smoothie-ts/compare/v1.3.4...v1.3.5) (2023-07-20)
+
+
+### Bug Fixes
+
+* :bug: Fixing lib path ([3bd8201](https://github.com/emilohlund-git/smoothie-ts/commit/3bd82011dcee3f4e72a5fe19af1729d423bf71ec))
+
 ### [1.3.4](https://github.com/emilohlund-git/smoothie-ts/compare/v1.3.3...v1.3.4) (2023-07-20)
 
 
