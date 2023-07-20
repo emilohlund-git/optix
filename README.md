@@ -9,8 +9,8 @@
 
 A comprehensive and modular utility library for all your programming needs. ✨
 
-[![NPM Version](https://img.shields.io/npm/v/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
-[![Downloads](https://img.shields.io/npm/dm/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
+[![NPM Version](https://img.shields.io/npm/v/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix.ts)
+[![Downloads](https://img.shields.io/npm/dm/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix.ts)
 
 </div>
 
@@ -30,7 +30,7 @@ npm install optix.ts
 ## Usage 🛠️
 
 ```TypeScript
-import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils } = from 'optix.ts';
+import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils, ValidationUtils } = from 'optix.ts';
 
 // Basic data analysis on arrays
 
@@ -41,7 +41,6 @@ const analysisResults = ArrayUtils.analyze(temperatureData);
 
 console.log(StringUtils.title("hello, world!"));
 // Output: "Hello, World!" 🌍
-console.log(sum(2, 3, 4, 5)); // Output: 14 ➕
 
 // Path finding algorithm
 
@@ -73,6 +72,20 @@ console.log(path);
 const clampedValue = MathUtils.clamp(100, 90, 95);
 
 console.log(clampedvalue); // Output: 95
+
+// Validation helpers
+
+const validEmail = "user@example.com"
+
+let isValidEmail = ValidationUtils.email(validEmail);
+
+console.log(isValidEmail); // Output: true
+
+const invalidEmail = "user@example.c1"
+
+isValidEmail = ValidationUtils.email(invalidEmail);
+
+console.log(isValidEmail); // Output: false
 ```
 
 ## Documentation 📖
