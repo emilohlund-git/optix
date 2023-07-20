@@ -7,7 +7,7 @@
   "version": "1.2.1",
   "description": "Utility library for TypeScript",
   "main": "dist/index.js",
-  "types": "dist/index.d.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc",
