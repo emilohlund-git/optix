@@ -1,5 +1,7 @@
 <div align="center" style="background-color: white; color: #333; padding-bottom: 2em; border-radius: 1em;">
-  <img style="margin-top: 2em;" src="https://i.ibb.co/sWfcNyt/Opti-X-logo.png" alt="Smoothie.ts logo" width="200" />
+  <img style="margin-top: 2em;" src="https://i.ibb.co/sWfcNyt/Opti-X-logo.png" alt="Smoothie.ts logo" width="400" />
+
+# optix 🔥
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/optix/build.yml?label=build&labelColor=%23800080&color=%23FFF)
 [![License](https://img.shields.io/github/license/emilohlund-git/optix.svg?style=flat-square)](LICENSE)
