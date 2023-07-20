@@ -1,23 +1,21 @@
 <div align="center" style="background-color: white; color: #333; padding-bottom: 2em; border-radius: 1em;">
-  <img src="https://i.ibb.co/RDcCLCt/smoothie-logo.png" alt="Smoothie.ts logo" width="200" />
+  <img style="margin-top: 2em;" src="https://i.ibb.co/sWfcNyt/Opti-X-logo.png" alt="Smoothie.ts logo" width="200" />
 
-# smoothie.ts 🔥
-
-![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/smoothie-ts/build.yml?label=build&labelColor=%23800080&color=%23FFF)
-[![License](https://img.shields.io/github/license/emilohlund-git/smoothie-ts.svg?style=flat-square)](LICENSE)
-[![codecov](https://codecov.io/gh/emilohlund-git/smoothie-ts/branch/main/graph/badge.svg?token=09SD0O77RV)](https://codecov.io/gh/emilohlund-git/smoothie-ts)
+![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/optix/build.yml?label=build&labelColor=%23800080&color=%23FFF)
+[![License](https://img.shields.io/github/license/emilohlund-git/optix.svg?style=flat-square)](LICENSE)
+[![codecov](https://codecov.io/gh/emilohlund-git/optix/branch/main/graph/badge.svg?token=09SD0O77RV)](https://codecov.io/gh/emilohlund-git/optix)
 
 A comprehensive and modular utility library for all your programming needs. ✨
 
-[![NPM Version](https://img.shields.io/npm/v/smoothie-ts.svg?style=flat-square)](https://www.npmjs.com/package/smoothie-ts)
-[![Downloads](https://img.shields.io/npm/dm/smoothie-ts.svg?style=flat-square)](https://www.npmjs.com/package/smoothie-ts)
+[![NPM Version](https://img.shields.io/npm/v/optix-ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
+[![Downloads](https://img.shields.io/npm/dm/optix-ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
 
 </div>
 
 ## Installation 💻
 
 ```bash
-npm install smoothie-ts
+npm install optix
 ```
 
 ## Features 🚀
@@ -30,7 +28,7 @@ npm install smoothie-ts
 ## Usage 🛠️
 
 ```TypeScript
-import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils } = from 'smoothie-ts';
+import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils } = from 'optix';
 
 // Basic data analysis on arrays
 
@@ -77,7 +75,7 @@ console.log(clampedvalue); // Output: 95
 
 ## Documentation 📖
 
-For detailed usage and API documentation, please check out the [Documentation](https://emilohlund-git.github.io/smoothie-ts/).
+For detailed usage and API documentation, please check out the [Documentation](https://emilohlund-git.github.io/optix/).
 
 ## Contributing 🤝
 
