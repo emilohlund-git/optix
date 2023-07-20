@@ -9,7 +9,7 @@ smoothie.ts 🔥
 
 A comprehensive and modular utility library for all your programming needs. ✨
 
-[![NPM Version](https://img.shields.io/npm/v/smoothie-ts.svg?style=flat-square)](https://www.npmjs.com/package/your_library)
+[![NPM Version](https://img.shields.io/npm/v/smoothie-ts.svg?style=flat-square)](https://www.npmjs.com/package/smoothie-ts)
 [![Downloads](https://img.shields.io/npm/dm/smoothie-ts.svg?style=flat-square)](https://www.npmjs.com/package/smoothie-ts)
 
 </div>
