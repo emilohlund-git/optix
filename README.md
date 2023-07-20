@@ -1,7 +1,7 @@
 <div align="center" style="background-color: white; color: #333; padding-bottom: 2em; border-radius: 1em;">
-  <img src="smoothie-logo.png" alt="Your Library Logo" width="200">
+  <img src="https://i.ibb.co/RDcCLCt/smoothie-logo.png" alt="Smoothie.ts logo" width="200" />
 
-# smoothie.ts 🔥
+smoothie.ts 🔥
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/smoothie-ts/build.yml?label=build&labelColor=%23800080&color=%23FFF)
 [![License](https://img.shields.io/github/license/emilohlund-git/smoothie-ts.svg?style=flat-square)](LICENSE)
@@ -77,12 +77,12 @@ console.log(clampedvalue); // Output: 95
 
 ## Documentation 📖
 
-For detailed usage and API documentation, please check out the Documentation. <b>(WIP)</b>
+For detailed usage and API documentation, please check out the [Documentation](https://emilohlund-git.github.io/smoothie-ts/).
 
 ## Contributing 🤝
 
-Contributions are welcome! If you'd like to contribute to the library, please follow the guidelines outlined in CONTRIBUTING.md. <b>(WIP)</b>
+Contributions are welcome! If you'd like to contribute to the library, please follow the guidelines outlined in [CONTRIBUTE](CONTRIBUTE.md).
 
 ## License 📝
 
-This project is licensed under the MIT License. 📜
+This project is licensed under the [MIT License](LICENSE). 📜
