@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1689816791597" clover="3.2.0">
+  <project timestamp="1689816791598" name="All files">
+    <metrics statements="136" coveredstatements="136" conditionals="27" coveredconditionals="27" methods="72" coveredmethods="70" elements="235" coveredelements="233" complexity="0" loc="136" ncloc="136" packages="4" files="25" classes="25"/>
+    <package name="src">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="21" coveredmethods="19"/>
+      <file name="index.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="21" coveredmethods="19"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="15" count="19" type="stmt"/>
+        <line num="16" count="19" type="stmt"/>
+        <line num="18" count="26" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.arrays">
+      <metrics statements="91" coveredstatements="91" conditionals="13" coveredconditionals="13" methods="34" coveredmethods="34"/>
+      <file name="analyzeData.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\analyzeData.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="20" type="stmt"/>
+        <line num="46" count="20" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+      </file>
+      <file name="average.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\average.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="20" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+      </file>
+      <file name="chunk.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\chunk.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="23" count="20" type="stmt"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="9" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+      </file>
+      <file name="findOutliers.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\findOutliers.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="20" type="stmt"/>
+        <line num="2" count="20" type="stmt"/>
+        <line num="21" count="20" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="26" count="31" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\index.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="13"/>
+        <line num="9" count="20" type="stmt"/>
+        <line num="10" count="20" type="stmt"/>
+        <line num="11" count="20" type="stmt"/>
+        <line num="12" count="20" type="stmt"/>
+        <line num="13" count="20" type="stmt"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="20" type="stmt"/>
+        <line num="16" count="20" type="stmt"/>
+        <line num="17" count="20" type="stmt"/>
+        <line num="18" count="20" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+        <line num="20" count="20" type="stmt"/>
+        <line num="21" count="20" type="stmt"/>
+        <line num="23" count="32" type="stmt"/>
+      </file>
+      <file name="max.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\max.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
+      </file>
+      <file name="median.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\median.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="20" type="stmt"/>
+        <line num="24" count="20" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="27" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+      </file>
+      <file name="min.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\min.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
+      </file>
+      <file name="normalize.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\normalize.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="22" count="20" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="26" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="30" count="15" type="stmt"/>
+      </file>
+      <file name="range.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\range.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
+      </file>
+      <file name="shuffle.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\shuffle.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="20" count="20" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="20" type="stmt"/>
+        <line num="24" count="20" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+      </file>
+      <file name="sort.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\sort.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="2" count="20" type="stmt"/>
+        <line num="24" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="24" type="stmt"/>
+        <line num="26" count="195" type="stmt"/>
+      </file>
+      <file name="standardDeviation.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\standardDeviation.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="20" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+        <line num="20" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="51" type="stmt"/>
+        <line num="26" count="51" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+      </file>
+      <file name="sum.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\arrays\sum.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="122" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.strings">
+      <metrics statements="34" coveredstatements="34" conditionals="7" coveredconditionals="7" methods="15" coveredmethods="15"/>
+      <file name="capitalizeFirstLetter.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\capitalizeFirstLetter.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="extractSubstringsByPattern.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\extractSubstringsByPattern.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="17" count="19" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="16" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+      </file>
+      <file name="getWordFrequency.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\getWordFrequency.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="19" type="stmt"/>
+        <line num="17" count="19" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="27" type="stmt"/>
+        <line num="23" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="5" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="8" count="19" type="stmt"/>
+        <line num="9" count="19" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+        <line num="11" count="19" type="stmt"/>
+        <line num="12" count="19" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="16" count="25" type="stmt"/>
+      </file>
+      <file name="reverse.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\reverse.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+      </file>
+      <file name="titleCase.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\titleCase.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+      </file>
+      <file name="tokenize.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\tokenize.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="15" count="19" type="stmt"/>
+        <line num="16" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="10" type="stmt"/>
+      </file>
+      <file name="truncate.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\strings\truncate.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="15" count="19" type="stmt"/>
+        <line num="16" count="6" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="7" coveredstatements="7" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <file name="compareValues.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\utils\compareValues.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="12" count="20" type="stmt"/>
+        <line num="13" count="195" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="194" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="169" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="25" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="index.ts" path="C:\Users\emil\OneDrive\Desktop\utility-lib\src\utils\index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="20" type="stmt"/>
+        <line num="11" count="215" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

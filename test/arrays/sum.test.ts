@@ -1,4 +1,4 @@
-import { sumArray } from '../src/index';
+import { sumArray } from '../../src';
 
 describe('sumArray', () => {
   it('should return the sum of numbers in the array', () => {
