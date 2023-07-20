@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/emilohlund-git/smoothie-ts/compare/v1.3.2...v1.3.3) (2023-07-20)
+
+
+### Bug Fixes
+
+* :bug: Was publishing unwanted folders to npm ([6f7238c](https://github.com/emilohlund-git/smoothie-ts/commit/6f7238c5c18689dd6436170cd72fff5412c72ee8))
+
 ### [1.3.2](https://github.com/emilohlund-git/smoothie-ts/compare/v1.3.1...v1.3.2) (2023-07-20)
 
 ### [1.3.1](https://github.com/emilohlund-git/smoothie-ts/compare/v1.3.0...v1.3.1) (2023-07-20)
