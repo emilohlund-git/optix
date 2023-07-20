@@ -9,8 +9,8 @@
 
 A comprehensive and modular utility library for all your programming needs. ✨
 
-[![NPM Version](https://img.shields.io/npm/v/optix-ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
-[![Downloads](https://img.shields.io/npm/dm/optix-ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
+[![NPM Version](https://img.shields.io/npm/v/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
+[![Downloads](https://img.shields.io/npm/dm/optix.ts.svg?style=flat-square)](https://www.npmjs.com/package/optix-ts)
 
 </div>
 

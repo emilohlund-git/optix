@@ -10,7 +10,7 @@
     "baseUrl": "./src",
     "declaration": true,
     "paths": {
-      "smoothie-ts/*": ["*"]
+      "optix.ts/*": ["*"]
     }
   },
   "include": ["src"]
