@@ -10,7 +10,6 @@
  * @author Emil Ölund
  * @see {@link https://github.com/emilohlund-git/smoothie-ts}
  */
-
 import { ArrayUtils } from "./arrays";
 import { MathUtils } from "./math";
 import { PathfindingUtils } from "./pathfinding";
