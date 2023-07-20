@@ -1,17 +1,5 @@
+import { ArrayUtils } from '.';
 import { AnalyzeDataResult } from '../types';
-import {
-  averageArray,
-  findOutliers,
-  maxArray,
-  medianArray,
-  minArray,
-  normalizeArray,
-  rangeArray,
-  shuffleArray,
-  sortArray,
-  standardDeviationArray,
-  sumArray,
-} from './';
 
 /**
  * @namespace ArrayUtils
@@ -44,24 +32,22 @@ import {
  * console.log('Outliers:', analysisResults.outliers);
  */
 export function analyzeDataArray(data: number[]): AnalyzeDataResult {
-  const average = averageArray(data);
-  const max = maxArray(data);
-  const min = minArray(data);
-  const median = medianArray(data);
-  const range = rangeArray(min, max);
-  const normalized = normalizeArray(data, 0, 1);
-  const standardDeviation = standardDeviationArray(data);
-  const sum = sumArray(data);
-  const sorted = sortArray(data);
-  const shuffled = shuffleArray(data);
-  const outliers = findOutliers(data);
+  const average = ArrayUtils.average(data);
+  const max = ArrayUtils.max(data);
+  const min = ArrayUtils.min(data);
+  const median = ArrayUtils.median(data);
+  const normalized = ArrayUtils.normalize(data, 0, 1);
+  const standardDeviation = ArrayUtils.deviation(data);
+  const sum = ArrayUtils.sum(data);
+  const sorted = ArrayUtils.sort(data);
+  const shuffled = ArrayUtils.shuffle(data);
+  const outliers = ArrayUtils.outliers(data);
 
   return {
     average,
     max,
     min,
     median,
-    range,
     normalized,
     standardDeviation,
     sum,

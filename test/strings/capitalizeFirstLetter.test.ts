@@ -1,11 +1,11 @@
-import { capitalizeFirstLetter } from "../../src";
+import { StringUtils } from "../../src";
 
 describe("capitalizeFirstLetter", () => {
   test('should capitalize the first letter of the word', () => {
-    expect(capitalizeFirstLetter('hello')).toBe('Hello');
+    expect(StringUtils.capitalize('hello')).toBe('Hello');
   });
 
   test('should return empty string if input is empty', () => {
-    expect(capitalizeFirstLetter('')).toBe('');
+    expect(StringUtils.capitalize('')).toBe('');
   });
 });

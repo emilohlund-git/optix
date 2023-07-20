@@ -1,4 +1,4 @@
-import { extractSubstringsByPattern } from "../../src";
+import { StringUtils } from "../../src";
 
 describe("StringUtils.extractSubstringsByPattern", () => {
   it('should extract all substrings from a string that match a given pattern', () => {
@@ -6,7 +6,7 @@ describe("StringUtils.extractSubstringsByPattern", () => {
     const pattern = /\w{2}/g;
     const expectedOutput = ["Th", "qu", "ic", "br", "ow", "fo", "ju", "mp", "ov", "er", "th", "la", "zy", "do"];
 
-    const result = extractSubstringsByPattern(inputString, pattern);
+    const result = StringUtils.extract(inputString, pattern);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -15,7 +15,7 @@ describe("StringUtils.extractSubstringsByPattern", () => {
     const pattern = /[xy]{2}/g;
     const expectedOutput: string[] = [];
 
-    const result = extractSubstringsByPattern(inputString, pattern);
+    const result = StringUtils.extract(inputString, pattern);
     expect(result).toEqual(expectedOutput);
   });
 
@@ -24,7 +24,7 @@ describe("StringUtils.extractSubstringsByPattern", () => {
     const pattern = /\d+/g;
     const expectedOutput = ['123', '456'];
 
-    const result = extractSubstringsByPattern(inputString, pattern);
+    const result = StringUtils.extract(inputString, pattern);
     expect(result).toEqual(expectedOutput);
   });
 });

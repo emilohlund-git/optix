@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -121,22 +121,7 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,19 +154,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -206,21 +179,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AnalyzeDataResult } from '../types';
-import {
-  averageArray,
-  findOutliers,
-  maxArray,
-  medianArray,
-  minArray,
-  normalizeArray,
-  rangeArray,
-  shuffleArray,
-  sortArray,
-  standardDeviationArray,
-  sumArray,
-} from './';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ArrayUtils } from '.';
+import { AnalyzeDataResult } from '../types';
 &nbsp;
 /**
  * @namespace ArrayUtils
@@ -253,24 +213,22 @@ import {
  * console.log('Outliers:', analysisResults.outliers);
  */
 export function analyzeDataArray(data: number[]): AnalyzeDataResult {
-  const average = averageArray(data);
-  const max = maxArray(data);
-  const min = minArray(data);
-  const median = medianArray(data);
-  const range = rangeArray(min, max);
-  const normalized = normalizeArray(data, 0, 1);
-  const standardDeviation = standardDeviationArray(data);
-  const sum = sumArray(data);
-  const sorted = sortArray(data);
-  const shuffled = shuffleArray(data);
-  const outliers = findOutliers(data);
+  const average = ArrayUtils.average(data);
+  const max = ArrayUtils.max(data);
+  const min = ArrayUtils.min(data);
+  const median = ArrayUtils.median(data);
+  const normalized = ArrayUtils.normalize(data, 0, 1);
+  const standardDeviation = ArrayUtils.deviation(data);
+  const sum = ArrayUtils.sum(data);
+  const sorted = ArrayUtils.sort(data);
+  const shuffled = ArrayUtils.shuffle(data);
+  const outliers = ArrayUtils.outliers(data);
 &nbsp;
   return {
     average,
     max,
     min,
     median,
-    range,
     normalized,
     standardDeviation,
     sum,
@@ -286,7 +244,7 @@ export function analyzeDataArray(data: number[]): AnalyzeDataResult {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-20T01:33:11.387Z
+                at 2023-07-20T14:50:40.439Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

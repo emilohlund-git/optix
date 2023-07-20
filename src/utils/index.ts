@@ -1,3 +1,6 @@
+import { compareValues } from "./compareValues";
+import { createGraphNode as _createGraphNode } from "./createGraphNode";
+
 /**
  * @namespace InternalUtils
  * 
@@ -5,8 +8,8 @@
  * 
  * A collection of utility functions to simplify internal tasks and improve code quality in TypeScript projects.
  */
-
-import { compareValues } from "./compareValues";
-
-export { compareValues };
+export namespace InternalUtils {
+  export const compare = compareValues;
+  export const createGraphNode = _createGraphNode;
+}
 

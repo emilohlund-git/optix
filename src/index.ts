@@ -11,9 +11,11 @@
  * @see {@link https://github.com/emilohlund-git/smoothie-ts}
  */
 
-import { analyzeDataArray, averageArray, chunkArray, findOutliers, maxArray, medianArray, minArray, normalizeArray, rangeArray, shuffleArray, sortArray, standardDeviationArray, sumArray } from "./arrays";
-import { capitalizeFirstLetter, extractSubstringsByPattern, getWordFrequency, reverseString, titleCase, tokenizeSentence, truncateString } from "./strings";
-import { compareValues } from "./utils";
+import { ArrayUtils } from "./arrays";
+import { MathUtils } from "./math";
+import { PathfindingUtils } from "./pathfinding";
+import { StringUtils } from "./strings";
+import { InternalUtils } from "./utils";
 
-export { analyzeDataArray, averageArray, capitalizeFirstLetter, chunkArray, compareValues, extractSubstringsByPattern, findOutliers, getWordFrequency, maxArray, medianArray, minArray, normalizeArray, rangeArray, reverseString, shuffleArray, sortArray, standardDeviationArray, sumArray, titleCase, tokenizeSentence, truncateString };
+export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils };
 

@@ -1,9 +1,9 @@
-import { shuffleArray } from "../../src";
+import { ArrayUtils } from "../../src";
 
 describe("shuffleArray", () => {
   it("should shuffle an array of numbers", () => {
     const numbers = [1, 2, 3, 4, 5];
-    const shuffledNumbers = shuffleArray(numbers);
+    const shuffledNumbers = ArrayUtils.shuffle(numbers);
 
     expect(shuffledNumbers).toHaveLength(numbers.length);
     expect(shuffledNumbers).toContain(1);
@@ -17,7 +17,7 @@ describe("shuffleArray", () => {
 
   it("should shuffle an array of strings", () => {
     const names = ["Alice", "Bob", "Charlie", "David"];
-    const shuffledNames = shuffleArray(names);
+    const shuffledNames = ArrayUtils.shuffle(names);
 
     expect(shuffledNames).toHaveLength(names.length);
     expect(shuffledNames).toContain("Alice");
@@ -29,7 +29,7 @@ describe("shuffleArray", () => {
   it("should not modify the original array", () => {
     const originalArray = [10, 20, 30, 40, 50];
     const copiedArray = [...originalArray];
-    shuffleArray(originalArray);
+    ArrayUtils.shuffle(originalArray);
 
     expect(originalArray).toEqual(copiedArray);
   });
