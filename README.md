@@ -17,7 +17,7 @@ A comprehensive and modular utility library for all your programming needs. ✨
 ## Installation 💻
 
 ```bash
-npm install optix
+npm install optix.ts
 ```
 
 ## Features 🚀
@@ -30,7 +30,7 @@ npm install optix
 ## Usage 🛠️
 
 ```TypeScript
-import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils } = from 'optix';
+import { ArrayUtils, StringUtils, PathfindingUtils, MathUtils } = from 'optix.ts';
 
 // Basic data analysis on arrays
 

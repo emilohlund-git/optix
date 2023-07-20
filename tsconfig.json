@@ -13,5 +13,5 @@
       "optix.ts/*": ["*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "./dist/index.js"]
 }
