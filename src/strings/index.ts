@@ -1,7 +1,10 @@
 import { capitalizeFirstLetter } from "./capitalizeFirstLetter";
+import { containsWhitespace as _containsWhitespace } from "./containsWhitespace";
 import { extractSubstringsByPattern } from "./extractSubstringsByPattern";
 import { getWordFrequency } from "./getWordFrequency";
+import { hasSequentialCharacters } from "./hasSequential";
 import { hexToRgba as _hexToRgba } from "./hexToRgba";
+import { hasRepeatedCharacters } from "./isRepeating";
 import { reverseString } from "./reverse";
 import { rgbaToHex as _rgbaToHex } from "./rgbaToHex";
 import { titleCase } from "./titleCase";
@@ -23,6 +26,9 @@ export namespace StringUtils {
   export const title = titleCase;
   export const tokenize = tokenizeSentence;
   export const truncate = truncateString;
+  export const containsWhitespace = _containsWhitespace
   export const hexToRgba = _hexToRgba;
   export const rgbaToHex = _rgbaToHex;
+  export const hasSequential = hasSequentialCharacters;
+  export const isRepeating = hasRepeatedCharacters;
 }

@@ -5,7 +5,7 @@
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/optix/build.yml?label=build&labelColor=%23800080&color=%23FFF)
 [![License](https://img.shields.io/github/license/emilohlund-git/optix.svg?style=flat-square)](LICENSE)
-[![codecov](https://codecov.io/gh/emilohlund-git/optix/branch/main/graph/badge.svg?token=09SD0O77RV)](https://codecov.io/gh/emilohlund-git/optix)
+[![codecov](https://codecov.io/gh/emilohlund-git/optix/branch/main/graph/badge.svg?token=09SD0O77RV)](https://codecov.io/gh/emilohlund-git/optix.)
 
 A comprehensive and modular utility library for all your programming needs. ✨
 

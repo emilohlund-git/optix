@@ -16,6 +16,7 @@ import { PathfindingUtils } from "./pathfinding";
 import { StringUtils } from "./strings";
 import * as types from './types';
 import { InternalUtils } from "./utils";
+import { ValidationUtils } from "./validations";
 
-export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils, types };
+export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils, ValidationUtils, types };
 
