@@ -3,7 +3,7 @@
 
 # smoothie.ts 🔥
 
-[![Build Status](https://img.shields.io/travis/emilohlund-git/smoothie-ts.svg?style=flat-square)](https://travis-ci.org/emilohlund-git/smoothie-ts)
+![Build Status](https://img.shields.io/github/actions/workflow/status/emilohlund-git/smoothie-ts/build.yml?label=build&labelColor=%23800080&color=%23FFF)
 [![License](https://img.shields.io/github/license/emilohlund-git/smoothie-ts.svg?style=flat-square)](LICENSE)
 [![codecov](https://codecov.io/gh/emilohlund-git/smoothie-ts/branch/main/graph/badge.svg?token=09SD0O77RV)](https://codecov.io/gh/emilohlund-git/smoothie-ts)
 
