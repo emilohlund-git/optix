@@ -1,5 +1,4 @@
-import { medianArray } from "./median";
-import { standardDeviationArray } from "./standardDeviation";
+import { sortArray } from "./sort";
 
 /**
  * @namespace ArrayUtils
@@ -19,9 +18,16 @@ import { standardDeviationArray } from "./standardDeviation";
  * console.log(outliers); // Output: [100]
  */
 export function findOutliers(numbers: number[]): number[] {
-  const median = medianArray(numbers);
-  const standardDeviation = standardDeviationArray(numbers);
-  const threshold = 2;
+  const sortedNumbers = sortArray(numbers);
 
-  return numbers.filter((number) => Math.abs(number - median) > threshold * standardDeviation);
+  const q1Index = Math.floor(sortedNumbers.length * 0.25);
+  const q3Index = Math.floor(sortedNumbers.length * 0.75);
+  const q1 = sortedNumbers[q1Index];
+  const q3 = sortedNumbers[q3Index];
+
+  const iqr = q3 - q1;
+
+  const threshold = 1.5 * iqr;
+
+  return sortedNumbers.filter((number) => number < q1 - threshold || number > q3 + threshold);
 }

@@ -13,9 +13,9 @@ describe("findOutliers", () => {
     expect(outliers).toEqual([]);
   });
 
-  it("should point out the outlier as 10", () => {
+  it("should point out the outlier as 10 and 110", () => {
     const numbers = [10, 88, 90, 92, 85, 102, 110, 94, 77];
     const outliers = findOutliers(numbers);
-    expect(outliers).toEqual([10]);
+    expect(outliers).toEqual([10, 110]);
   });
 });
