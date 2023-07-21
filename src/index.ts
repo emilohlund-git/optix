@@ -16,7 +16,8 @@ import { PathfindingUtils } from "./pathfinding";
 import { StringUtils } from "./strings";
 import * as types from './types';
 import { InternalUtils } from "./utils";
+import { RNG } from "./utils/randomNumberGenerator";
 import { ValidationUtils } from "./validations";
 
-export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, StringUtils, ValidationUtils, types };
+export { ArrayUtils, InternalUtils, MathUtils, PathfindingUtils, RNG, StringUtils, ValidationUtils, types };
 
