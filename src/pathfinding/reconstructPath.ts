@@ -1,4 +1,4 @@
-import { GraphNode, Point } from "../types";
+import { GraphNode, GraphNodeMap, Point } from "../types";
 
 /**
  * @namespace PathfindingUtils
@@ -8,7 +8,7 @@ import { GraphNode, Point } from "../types";
  * final path from the start node to the goal node.
  * 
  * @param {GraphNode<Point>} node - The end node of the pathfinding.
- * @param {Object.<string, GraphNode<Point> | null>} cameFrom - An object that stores the parent links for each node.
+ * @param {GraphNodeMap<T>} cameFrom - An object that stores the parent links for each node.
  * @returns {Point[]} An array of nodes representing the path from start to end.
  * 
  * @example
@@ -39,13 +39,13 @@ import { GraphNode, Point } from "../types";
  * //   { x: 2, y: 2 }
  * // ]
  */
-export function reconstructPath<T extends Point>(node: GraphNode<T>, cameFrom: { [id: string]: GraphNode<T> | null }): Point[] {
+export function reconstructPath<T extends Point>(node: GraphNode<T>, cameFrom: GraphNodeMap<T>): Point[] {
   const path: Point[] = [];
-  let currentNode: GraphNode<T> | null = node;
+  let currentNode: GraphNode<T> | undefined = node;
 
   while (currentNode) {
     path.unshift(currentNode.data);
-    currentNode = cameFrom[currentNode.id];
+    currentNode = cameFrom.get(currentNode.id);
   }
 
   return path;

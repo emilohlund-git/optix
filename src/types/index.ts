@@ -31,27 +31,38 @@ export type AnalyzeDataResult = {
 };
 
 /**
+ * Represents a unique identifier for a graph node in the format "number,number".
+ * For example, "1,2" or "0.5,3".
+ */
+export type GraphNodeId = `${number},${number}`;
+
+// Define the type for the connections array
+export type Connection = [GraphNodeId, GraphNodeId];
+
+/**
  * Represents a node in a graph.
  * @interface GraphNode
  * @template T The type of data associated with the node.
  * 
- * @property {string} id - The unique identifier for the node.
+ * @property {GraphNodeId} id - The unique identifier for the node.
  * @property {T} data - The data associated with the node.
- * @property {Array<GraphNode<T>>} neighbors - An array of neighboring nodes connected to this node.
+ * @property {GraphNodeMap<T>} neighbors - An array of neighboring nodes connected to this node.
  *
  * @example
  * const node: GraphNode<number> = {
  *   id: "node1",
  *   data: 42,
- *   neighbors: [node2, node3, node4],
+ *   neighbors: { "0,1": node2, "0,2": node3, "0,3": node4 },
  * };
  */
 export interface GraphNode<T> {
-  id: string; // Unique identifier for the node
+  id: GraphNodeId;
   data: T; // Data associated with the node (can be any type)
-  neighbors: Array<GraphNode<T>>; // Array of neighboring nodes
+  neighbors: GraphNodeMap<T>; // Array of neighboring nodes
   parent: GraphNode<T> | null;
 }
+
+export type GraphNodeMap<T> = Map<GraphNodeId, GraphNode<T>>;
 
 /**
  * Represents a node used in pathfinding algorithms.
@@ -79,6 +90,16 @@ export interface PathfindingNode<T> {
   g: number; // Cost from start node to this node
   h: number; // Heuristic cost from this node to the goal node
   parent: PathfindingNode<T> | null;
+}
+
+export enum PathfindingAlgorithm {
+  Theta = 'Theta*',
+  Astar = 'A*'
+}
+
+export interface PathfindingOptions<T> {
+  heuristic?: HeuristicFunction<T>,
+  algorithm?: PathfindingAlgorithm
 }
 
 /**
@@ -144,3 +165,8 @@ export interface PasswordValidationOptions {
     sequentialCharacters?: string;
   };
 }
+
+/**
+ * Represents a Universally Unique Identifier (UUID).
+ */
+export type UUID = `${string}-${string}-${string}-${string}-${string}`;

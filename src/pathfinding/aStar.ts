@@ -1,4 +1,5 @@
-import { GraphNode, HeuristicFunction, Point } from "../types";
+import { GraphNode, GraphNodeId, GraphNodeMap, HeuristicFunction, Point } from "../types";
+import { InternalUtils } from "../utils";
 import { reconstructPath } from "./reconstructPath";
 
 /**
@@ -53,32 +54,44 @@ import { reconstructPath } from "./reconstructPath";
  * // ]
  */
 export function aStar<T extends Point>(start: GraphNode<T>, goal: GraphNode<T>, heuristic: HeuristicFunction<T>): Point[] {
-  const openSet: GraphNode<T>[] = [start];
-  const cameFrom: { [id: string]: GraphNode<T> | null } = {};
-  const gScore: { [id: string]: number } = { [start.id]: 0 };
+  const openSet: GraphNodeMap<T> = new Map<GraphNodeId, GraphNode<T>>();
+  openSet.set(start.id, start);
+
+  const cameFrom: GraphNodeMap<T> = new Map<GraphNodeId, GraphNode<T>>();
+  const gScore: { [id: GraphNodeId]: number } = { [start.id]: 0 };
   gScore[start.id] = 0;
   const fScore: { [id: string]: number } = { [start.id]: heuristic(start, goal) };
   fScore[start.id] = heuristic(start, goal);
 
-  while (openSet.length > 0) {
-    const current = openSet.reduce((minNode, node) => (fScore[node.id] < fScore[minNode.id] ? node : minNode), openSet[0]);
+  while (openSet.size > 0) {
+    let current: GraphNode<T> | undefined;
+    for (const node of openSet.values()) {
+      const nodeId = InternalUtils.generatePointId(node.data);
+      if (!current || fScore[nodeId] < fScore[current.id]) {
+        current = node;
+      }
+    }
+
+    if (!current) {
+      break;
+    }
 
     if (current === goal) {
       return reconstructPath(current, cameFrom);
     }
 
-    openSet.splice(openSet.indexOf(current), 1);
+    openSet.delete(current.id);
 
-    for (const neighbor of current.neighbors) {
+    for (const [neighborId, neighbor] of current.neighbors) {
       const tentativeGScore = gScore[current.id] + 1;
 
-      if (tentativeGScore < gScore[neighbor.id] || !gScore.hasOwnProperty(neighbor.id)) {
-        cameFrom[neighbor.id] = current;
-        gScore[neighbor.id] = tentativeGScore;
-        fScore[neighbor.id] = tentativeGScore + heuristic(neighbor, goal);
+      if (tentativeGScore < gScore[neighborId] || !gScore.hasOwnProperty(neighborId)) {
+        cameFrom.set(neighborId, current);
+        gScore[neighborId] = tentativeGScore;
+        fScore[neighborId] = tentativeGScore + heuristic(neighbor, goal);
 
-        if (!openSet.includes(neighbor)) {
-          openSet.push(neighbor);
+        if (!openSet.has(neighborId)) {
+          openSet.set(neighborId, neighbor);
         }
       }
     }

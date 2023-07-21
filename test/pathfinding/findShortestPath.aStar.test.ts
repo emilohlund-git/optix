@@ -1,13 +1,12 @@
 import { PathfindingUtils } from "../../src";
-import { Point } from "../../src/types";
-import { createGraphNode } from "../../src/utils/createGraphNode";
+import { Connection, Point } from "../../src/types";
 
-describe("PathfindingUtils.findPath", () => {
+describe("PathfindingUtils.findShortestPath.aStar", () => {
   it("should find a valid path in a complex graph with obstacles", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 4, y: 4 };
 
-    const connections: [string, string][] = [
+    const connections: Connection[] = [
       ["0,0", "0,1"],
       ["0,1", "0,2"],
       ["0,2", "0,3"],
@@ -40,7 +39,7 @@ describe("PathfindingUtils.findPath", () => {
       { "x": 4, "y": 4 },
     ];
 
-    const result = PathfindingUtils.findShortestPath(startData, goalData, connections);
+    const result = PathfindingUtils.findShortestPath(startData, goalData, connections, []);
 
     expect(result).toBeDefined();
     expect(Array.isArray(result)).toBe(true);
@@ -52,12 +51,12 @@ describe("PathfindingUtils.findPath", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 2, y: 2 };
 
-    const connections: [string, string][] = [
+    const connections: Connection[] = [
       ["0,0", "1,0"],
       ["0,0", "0,1"],
       ["0,1", "1,1"],
       ["1,0", "1,1"],
-      ["1.1", "1.1"],
+      ["1,1", "1,1"],
       ["1,1", "2,1"],
       ["0,1", "0,2"],
       ["0,2", "1,2"],
@@ -73,11 +72,11 @@ describe("PathfindingUtils.findPath", () => {
       { "x": 2, "y": 2 }
     ];
 
-    const result = PathfindingUtils.findShortestPath(startData, goalData, connections);
+    const result = PathfindingUtils.findShortestPath(startData, goalData, connections, []);
 
     expect(result).toBeDefined();
     expect(Array.isArray(result)).toBe(true);
-    expect(result).toHaveLength(4); // The path should contain 5 points (start, 2 intermediate points, goal)
+    expect(result).toHaveLength(4); // The path should contain 4 points (start, 2 intermediate points, goal)
     expect(result).toEqual(expectedPath);
   });
 
@@ -87,13 +86,13 @@ describe("PathfindingUtils.findPath", () => {
     const goalData: Point = { x: 2, y: 2 };
 
     // Define the connections between nodes (edges in the graph)
-    const connections: [string, string][] = [
+    const connections: Connection[] = [
       ["0,0", "1,1"],
       ["1,1", "2,2"],
     ];
 
     // Call the findPath method to get the result
-    const result = PathfindingUtils.findShortestPath(startData, goalData, connections);
+    const result = PathfindingUtils.findShortestPath(startData, goalData, connections, []);
 
     // Expect the result to be an array of points representing the path
     expect(result).toBeDefined();
@@ -107,18 +106,14 @@ describe("PathfindingUtils.findPath", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 3, y: 3 }; // A goal that is not connected to the start node
 
-    // Create graph nodes for start and goal points
-    const startNode = createGraphNode("start", startData);
-    const goalNode = createGraphNode("goal", goalData);
-
     // Define the connections between nodes (edges in the graph)
-    const connections: [string, string][] = [
+    const connections: Connection[] = [
       // No connections between start and goal
       // Add other connections if needed for more complex tests
     ];
 
     // Call the findPath method to get the result
-    const result = PathfindingUtils.findShortestPath(startData, goalData, connections);
+    const result = PathfindingUtils.findShortestPath(startData, goalData, connections, []);
 
     // Expect the result to be an empty array since there is no valid path
     expect(result).toBeDefined();

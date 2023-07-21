@@ -1,8 +1,11 @@
-import { GraphNode, Point } from "../types";
+import { GraphNode, GraphNodeId, GraphNodeMap } from "../types";
 
 /**
+ * @namespace InternalUtils
+ * 
  * Create a graph node for a given point.
+ * @param {T} data - The data associated with the node.
  */
-export function createGraphNode(id: string, data: Point): GraphNode<Point> {
-  return { id, data, neighbors: [], parent: null };
+export function createGraphNode<T>(id: GraphNodeId, data: T): GraphNode<T> {
+  return { id, data, neighbors: new Map() as GraphNodeMap<T>, parent: null };
 }
