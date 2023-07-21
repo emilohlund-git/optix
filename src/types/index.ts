@@ -18,7 +18,7 @@ export type SortOrder = 'ASC' | 'DESC';
  * @property {number[]} outliers - Any outliers found in the data, indicating unusual observations.
  */
 export type AnalyzeDataResult = {
-  average: number;
+  mean: number;
   max: number;
   min: number;
   median: number;
@@ -208,3 +208,7 @@ export interface PasswordValidationOptions {
  * Represents a Universally Unique Identifier (UUID).
  */
 export type UUID = `${string}-${string}-${string}-${string}-${string}`;
+
+export interface NumericObject {
+  [key: string]: number;
+}
