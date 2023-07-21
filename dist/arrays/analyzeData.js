@@ -1,9 +1,10 @@
-import { ArrayUtils } from '.';
-import { AnalyzeDataResult, NumericObject } from '../types';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.analyzeNumericArray = exports.analyzeNumericObjectArray = void 0;
+const _1 = require(".");
 /**
  * @namespace ArrayUtils
- * 
+ *
  * Analyze an array of objects with numeric attributes and provide various statistical measures and transformations.
  *
  * This utility function takes an input array of objects with numeric attributes and performs a comprehensive analysis
@@ -57,19 +58,17 @@ import { AnalyzeDataResult, NumericObject } from '../types';
  * //   outliers: []
  * // }
  */
-export function analyzeNumericObjectArray<T extends NumericObject>(data: T[]): { [K in keyof T]: AnalyzeDataResult } {
-  const result: { [K in keyof T]: AnalyzeDataResult } = {} as { [K in keyof T]: AnalyzeDataResult };
-
-  for (const key in data[0]) {
-    if (typeof data[0][key] === 'number') {
-      const attributeData = <number[]>data.map((item) => item[key]);
-      result[key] = analyzeNumericArray(attributeData);
+function analyzeNumericObjectArray(data) {
+    const result = {};
+    for (const key in data[0]) {
+        if (typeof data[0][key] === 'number') {
+            const attributeData = data.map((item) => item[key]);
+            result[key] = (0, exports.analyzeNumericArray)(attributeData);
+        }
     }
-  }
-
-  return result;
+    return result;
 }
-
+exports.analyzeNumericObjectArray = analyzeNumericObjectArray;
 /**
  * Analyze an array of numeric data and provide various statistical measures and transformations.
  *
@@ -98,28 +97,28 @@ export function analyzeNumericObjectArray<T extends NumericObject>(data: T[]): {
  * console.log('Shuffled Temperatures:', analysisResults.shuffled);
  * console.log('Outliers:', analysisResults.outliers);
  */
-export const analyzeNumericArray = (attributeData: number[]): AnalyzeDataResult => {
-  const mean = ArrayUtils.mean(attributeData);
-  const max = ArrayUtils.max(attributeData);
-  const min = ArrayUtils.min(attributeData);
-  const median = ArrayUtils.median(attributeData);
-  const normalized = ArrayUtils.normalize(attributeData, 0, 1);
-  const standardDeviation = ArrayUtils.deviation(attributeData);
-  const sum = ArrayUtils.sum(attributeData);
-  const sorted = ArrayUtils.sort(attributeData);
-  const shuffled = ArrayUtils.shuffle(attributeData);
-  const outliers = ArrayUtils.outliers(attributeData);
-
-  return {
-    mean,
-    max,
-    min,
-    median,
-    normalized,
-    standardDeviation,
-    sum,
-    sorted,
-    shuffled,
-    outliers,
-  };
-}
+const analyzeNumericArray = (attributeData) => {
+    const mean = _1.ArrayUtils.mean(attributeData);
+    const max = _1.ArrayUtils.max(attributeData);
+    const min = _1.ArrayUtils.min(attributeData);
+    const median = _1.ArrayUtils.median(attributeData);
+    const normalized = _1.ArrayUtils.normalize(attributeData, 0, 1);
+    const standardDeviation = _1.ArrayUtils.deviation(attributeData);
+    const sum = _1.ArrayUtils.sum(attributeData);
+    const sorted = _1.ArrayUtils.sort(attributeData);
+    const shuffled = _1.ArrayUtils.shuffle(attributeData);
+    const outliers = _1.ArrayUtils.outliers(attributeData);
+    return {
+        mean,
+        max,
+        min,
+        median,
+        normalized,
+        standardDeviation,
+        sum,
+        sorted,
+        shuffled,
+        outliers,
+    };
+};
+exports.analyzeNumericArray = analyzeNumericArray;
