@@ -1,4 +1,4 @@
-import { AnalyzeDataResult } from '../types';
+import { AnalyzeDataResult, NumericObject } from '../types';
 /**
  * @namespace ArrayUtils
  *
@@ -55,7 +55,7 @@ import { AnalyzeDataResult } from '../types';
  * //   outliers: []
  * // }
  */
-export declare function analyzeNumericObjectArray<T>(data: T[]): {
+export declare function analyzeNumericObjectArray<T extends NumericObject>(data: T[]): {
     [K in keyof T]: AnalyzeDataResult;
 };
 /**
