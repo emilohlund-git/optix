@@ -2,29 +2,6 @@ import { Connection, PathfindingUtils, Point } from "../../src";
 import { generateConnectionArray } from "../../src/pathfinding/generateConnectionArray";
 
 describe("PathfindingUtils.findShortestPath.thetaStar", () => {
-  it('testing', () => {
-    const GRID_SIZE = 20;
-    const CELL_SIZE = 60;
-
-    const startData = { x: 10, y: 14 };
-    const goalData = { x: 12, y: 13 };
-
-    const initialObstacles: Point[] = [
-      { x: 2, y: 2 },
-      { x: 4, y: 4 },
-    ];
-
-    const connections = PathfindingUtils.generateConnections(GRID_SIZE, GRID_SIZE, []);
-
-    console.log(connections);
-
-    const result = PathfindingUtils.findShortestPath(startData, goalData, connections, initialObstacles, {
-      algorithm: 'Theta*'
-    });
-
-    console.log(result);
-  });
-
   it("should find a valid path in a complex graph with obstacles", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 19, y: 19 };
@@ -38,6 +15,12 @@ describe("PathfindingUtils.findShortestPath.thetaStar", () => {
       { x: 4, y: 5 },
       { x: 3, y: 4 },
       { x: 2, y: 3 },
+      { x: 2, y: 4 },
+      { x: 2, y: 5 },
+      { x: 2, y: 6 },
+      { x: 2, y: 7 },
+      { x: 2, y: 8 },
+      { x: 2, y: 9 },
     ]
 
     const result = PathfindingUtils.findShortestPath(startData, goalData, connections, obstacles, {

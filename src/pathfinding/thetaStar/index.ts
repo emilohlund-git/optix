@@ -80,7 +80,7 @@ export function thetaStar<T extends Point>(
   const width = Math.max(...allPoints.map(point => point.x)) + 1;
   const height = Math.max(...allPoints.map(point => point.y)) + 1;
 
-  const obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
+  const obstacleGrid = Array.from({ length: width }, () => Array(height).fill(false));
 
   // Mark obstacle cells in the grid
   obstacles.forEach(({ x, y }) => {
@@ -181,7 +181,7 @@ export function thetaStar<T extends Point>(
       }
 
       // Check if the neighbor is an obstacle and skip it
-      if (obstacleGrid[neighbor.data.x][neighbor.data.y]) {
+      if (obstacleGrid[neighbor.data.y][neighbor.data.x]) {
         continue;
       }
 
