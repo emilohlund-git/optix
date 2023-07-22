@@ -1,1 +1,1 @@
-{"version":3,"file":"PathfindingAlgorithm.js","sourceRoot":"","sources":["../../../../src/pathfinding/findShortestPath/interfaces/PathfindingAlgorithm.ts"],"names":[],"mappings":";;;AAAA;;GAEG;AACH,IAAY,oBASX;AATD,WAAY,oBAAoB;IAC9B;;OAEG;IACH,wCAAgB,CAAA;IAChB;;OAEG;IACH,oCAAY,CAAA;AACd,CAAC,EATW,oBAAoB,oCAApB,oBAAoB,QAS/B"}
+{"version":3,"file":"PathfindingAlgorithm.js","sourceRoot":"","sources":["../../../../src/pathfinding/findShortestPath/interfaces/PathfindingAlgorithm.ts"],"names":[],"mappings":""}

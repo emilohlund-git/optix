@@ -14,7 +14,7 @@ import { ArrayUtils } from "./arrays";
 import type { AnalyzeDataResult } from "./arrays/analyzeData/interfaces/AnalyzeDataResult";
 import { MathUtils } from "./math";
 import { PathfindingUtils } from "./pathfinding";
-import type { PathfindingAlgorithm } from "./pathfinding/findShortestPath/interfaces/PathfindingAlgorithm";
+import { PathfindingAlgorithm } from "./pathfinding/findShortestPath/interfaces/PathfindingAlgorithm";
 import type { PathfindingOptions } from "./pathfinding/findShortestPath/interfaces/PathfindingOptions";
 import type { Connection } from "./pathfinding/interfaces/Connection";
 import type { GraphNode } from "./pathfinding/interfaces/GraphNode";

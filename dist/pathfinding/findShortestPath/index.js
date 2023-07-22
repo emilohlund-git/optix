@@ -5,7 +5,6 @@ const utils_1 = require("../../utils");
 const aStar_1 = require("../aStar");
 const heuristic_1 = require("../heuristic");
 const thetaStar_1 = require("../thetaStar");
-const PathfindingAlgorithm_1 = require("./interfaces/PathfindingAlgorithm");
 /**
  * @namespace PathfindingUtils
  *
@@ -70,7 +69,7 @@ const PathfindingAlgorithm_1 = require("./interfaces/PathfindingAlgorithm");
  * const pathThetaStar = findShortestPath(startingPoint, goal, connections, obstacles, { algorithm: PathfindingAlgorithm.ThetaStar });
  */
 function findShortestPath(start, goal, connections, obstacles, options = {}) {
-    const { heuristic = heuristic_1.heuristic, algorithm = PathfindingAlgorithm_1.PathfindingAlgorithm.Astar } = options;
+    const { heuristic = heuristic_1.heuristic, algorithm = 'A*' } = options;
     const createDataFn = (id) => {
         const [x, y] = id.split(",").map(Number);
         return { x, y };
@@ -83,7 +82,7 @@ function findShortestPath(start, goal, connections, obstacles, options = {}) {
     if (!startNode || !goalNode) {
         return [];
     }
-    return algorithm === PathfindingAlgorithm_1.PathfindingAlgorithm.Astar
+    return algorithm === 'A*'
         ? (0, aStar_1.aStar)(startNode, goalNode, heuristic)
         : (0, thetaStar_1.thetaStar)(startNode, goalNode, obstacles, heuristic);
 }
