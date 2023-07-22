@@ -1,4 +1,8 @@
-coverage/
-docs/
+coverage
+docs
 .github
-test/
+test
+node_modules
+**/tsconfig.json
+**/webpack.config.json
+src

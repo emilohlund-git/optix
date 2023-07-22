@@ -57,7 +57,12 @@ import { reconstructPath } from "../reconstructPath";
  * //   { x: 2, y: 2 }
  * // ]
  */
-export function aStar<T extends Point>(start: GraphNode<T>, goal: GraphNode<T>, heuristic: HeuristicFunction<T>): Point[] {
+export function aStar<T extends Point>(
+  start: GraphNode<T>,
+  goal: GraphNode<T>,
+  heuristic: HeuristicFunction<T>,
+  callback?: (currentPath: Point[]) => void
+): Point[] {
   const openSet: GraphNodeMap<T> = new Map<GraphNodeId, GraphNode<T>>();
   openSet.set(start.id, start);
 
@@ -81,7 +86,13 @@ export function aStar<T extends Point>(start: GraphNode<T>, goal: GraphNode<T>, 
     }
 
     if (current === goal) {
-      return reconstructPath(current, cameFrom);
+      const path = reconstructPath(current, cameFrom);
+
+      if (callback) {
+        callback(path);
+      }
+
+      return path;
     }
 
     openSet.delete(current.id);

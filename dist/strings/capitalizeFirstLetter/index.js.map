@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/strings/capitalizeFirstLetter/index.ts"],"names":[],"mappings":";;;AAAA;;;;;;;;;;;;GAYG;AACH,SAAgB,qBAAqB,CAAC,GAAW;IAC/C,IAAI,GAAG,CAAC,MAAM,KAAK,CAAC;QAAE,OAAO,GAAG,CAAC;IACjC,OAAO,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE,GAAG,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC;AAHD,sDAGC"}

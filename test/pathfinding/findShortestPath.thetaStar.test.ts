@@ -2,6 +2,25 @@ import { Connection, PathfindingUtils, Point } from "../../src";
 import { generateConnectionArray } from "../../src/pathfinding/generateConnectionArray";
 
 describe("PathfindingUtils.findShortestPath.thetaStar", () => {
+  it("should be able to check for obstacles outside of obstacleGrid without exceptions", () => {
+    const startData: Point = { x: 0, y: 0 };
+
+    // Set a goal point that's somewhere in the middle of the grid
+    const goalData: Point = { x: 5, y: 5 };
+
+    const connections: Connection[] = generateConnectionArray(20, 20, []);
+
+    const obstacles: Point[] = [
+      { x: 16, y: 16 },
+    ];
+
+    expect(() => {
+      PathfindingUtils.findShortestPath(startData, goalData, connections, obstacles, {
+        algorithm: 'Theta*'
+      });
+    }).not.toThrow();
+  });
+
   it("should find a valid path in a complex graph with obstacles", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 19, y: 19 };

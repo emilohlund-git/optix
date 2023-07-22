@@ -1,5 +1,4 @@
-import { PathfindingUtils } from "../../src";
-import { Connection, Point } from "../../src/types";
+import { Connection, PathfindingUtils, Point } from "../../src";
 
 describe("PathfindingUtils.findShortestPath.aStar", () => {
   it("should find a valid path in a complex graph with obstacles", () => {

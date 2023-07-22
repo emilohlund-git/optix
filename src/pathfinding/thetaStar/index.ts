@@ -14,6 +14,8 @@ import { Point } from "../interfaces/Point";
  * @template T - The type of the nodes' data, which must extend the Point interface.
  * @param {GraphNode<T>} start - The starting node of the pathfinding.
  * @param {GraphNode<T>} goal - The goal node to reach.
+ * @param {number} width - The width of the grid.
+ * @param {numbe} height - The height of the grid.
  * @param {Point[]} obstacles - An array of points representing the coordinates of obstacles on the grid.
  * @param {HeuristicFunction<T>} heuristic - The heuristic function used to estimate the cost from a node to the goal.
  * @returns {Point[]} - An array of points representing the shortest path from the start to the goal.
@@ -69,22 +71,24 @@ import { Point } from "../interfaces/Point";
 export function thetaStar<T extends Point>(
   start: GraphNode<T>,
   goal: GraphNode<T>,
+  width: number,
+  height: number,
   obstacles: Point[],
   heuristic: HeuristicFunction<T>,
+  callback?: (currentPath: Point[]) => void,
 ): Point[] {
   const cameFrom: GraphNodeMap<T> = new Map<GraphNodeId, GraphNode<T>>();
   const openSet: PathfindingNode<T>[] = [];
   const closedSet: Set<GraphNodeId> = new Set();
 
-  const allPoints: Point[] = [...obstacles, start.data, goal.data];
-  const width = Math.max(...allPoints.map(point => point.x)) + 1;
-  const height = Math.max(...allPoints.map(point => point.y)) + 1;
-
   const obstacleGrid = Array.from({ length: width }, () => Array(height).fill(false));
 
   // Mark obstacle cells in the grid
   obstacles.forEach(({ x, y }) => {
-    obstacleGrid[y][x] = true;
+    // Check if the obstacle coordinates are within the grid bounds
+    if (x >= 0 && x < width && y >= 0 && y < height) {
+      obstacleGrid[y][x] = true;
+    }
   });
 
   /**
@@ -172,7 +176,13 @@ export function thetaStar<T extends Point>(
     closedSet.add(current.id);
 
     if (current === goal) {
-      return PathfindingUtils.reconstructPath(current, cameFrom);
+      const path = PathfindingUtils.reconstructPath(current, cameFrom);
+
+      if (callback) {
+        callback(path);
+      }
+
+      return path;
     }
 
     for (const [neighborId, neighbor] of current.neighbors) {
@@ -181,7 +191,13 @@ export function thetaStar<T extends Point>(
       }
 
       // Check if the neighbor is an obstacle and skip it
-      if (obstacleGrid[neighbor.data.y][neighbor.data.x]) {
+      if (
+        neighbor.data.x < 0 ||
+        neighbor.data.x >= width ||
+        neighbor.data.y < 0 ||
+        neighbor.data.y >= height ||
+        obstacleGrid[neighbor.data.y][neighbor.data.x]
+      ) {
         continue;
       }
 

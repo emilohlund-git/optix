@@ -1,21 +1,18 @@
 {
   "compilerOptions": {
-    "lib": ["ES5", "ES6"],
-    "target": "ES2019",
+    "lib": ["ES2015", "DOM"],
+    "target": "ES6",
     "module": "CommonJS",
     "esModuleInterop": true,
-    "outDir": "./dist",
+    "outDir": "lib",
     "rootDir": "./src",
     "strict": true,
     "importHelpers": true,
     "sourceMap": true,
     "pretty": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
-    "declaration": true,
-    "paths": {
-      "optix.ts/*": ["*"]
-    }
+    "baseUrl": "./src",
+    "declaration": true
   },
-  "include": ["src"]
+  "include": ["src/"]
 }

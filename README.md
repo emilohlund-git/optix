@@ -62,6 +62,8 @@ Simplify complex calculations with our math utilities, designed to handle common
 
 ### Theta* or A* Algorithm for Pathfinding 🗺️
 
+<img src="https://i.ibb.co/y5VfmqD/theta.png" style="border-radius: .5em;" alt="theta">
+
 Solve graph-based problems and find the shortest path using our efficient pathfinding algorithms. Optix provides the powerful Theta\* Algorithm for optimizing pathfinding in grid-based environments, making it ideal for games, robotics, and route planning.
 
 - **Theta\* Algorithm**: Find an optimal path between two nodes in a grid with reduced node expansions compared to Dijkstra's Algorithm, leading to faster pathfinding in dense grids.

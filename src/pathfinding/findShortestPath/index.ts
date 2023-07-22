@@ -77,7 +77,8 @@ export function findShortestPath<T extends Point>(
   goal: T,
   connections: Connection[],
   obstacles: Point[],
-  options: PathfindingOptions<T> = {}
+  options: PathfindingOptions<T> = {},
+  callback?: (currentPath: Point[]) => void,
 ): Point[] {
   const {
     heuristic = defaultHeuristic,
@@ -89,7 +90,8 @@ export function findShortestPath<T extends Point>(
     return { x, y } as T;
   };
 
-  const nodes: GraphNodeMap<T> = InternalUtils.createGraphNodes(connections, createDataFn);
+  const dimensions: number[] = [0, 0];
+  const nodes: GraphNodeMap<T> = InternalUtils.createGraphNodes(connections, createDataFn, dimensions);
 
   const startId = InternalUtils.generatePointId(start);
   const goalId = InternalUtils.generatePointId(goal);
@@ -101,7 +103,10 @@ export function findShortestPath<T extends Point>(
     return [];
   }
 
+  const width = dimensions[0] + 1;
+  const height = dimensions[1] + 1;
+
   return algorithm === 'A*'
-    ? aStar(startNode, goalNode, heuristic)
-    : thetaStar(startNode, goalNode, obstacles, heuristic);
+    ? aStar(startNode, goalNode, heuristic, callback)
+    : thetaStar(startNode, goalNode, width, height, obstacles, heuristic, callback);
 }
