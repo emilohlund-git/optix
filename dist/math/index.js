@@ -19,3 +19,4 @@ var MathUtils;
     MathUtils.lerp = lerp_1.lerp;
     MathUtils.radToDeg = radToDeg_1.radToDeg;
 })(MathUtils || (exports.MathUtils = MathUtils = {}));
+//# sourceMappingURL=index.js.map

@@ -37,3 +37,4 @@ var ArrayUtils;
     ArrayUtils.chunk = chunk_1.chunkArray;
     ArrayUtils.outliers = findOutliers_1.findOutliers;
 })(ArrayUtils || (exports.ArrayUtils = ArrayUtils = {}));
+//# sourceMappingURL=index.js.map

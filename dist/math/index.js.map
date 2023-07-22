@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/math/index.ts"],"names":[],"mappings":";;;AAAA,mCAA0C;AAC1C,yCAAmD;AACnD,iCAAuC;AACvC,yCAAmD;AAEnD;;;;;;GAMG;AACH,IAAiB,SAAS,CAKzB;AALD,WAAiB,SAAS;IACX,eAAK,GAAG,aAAM,CAAC;IACf,kBAAQ,GAAG,mBAAS,CAAC;IACrB,cAAI,GAAG,WAAK,CAAC;IACb,kBAAQ,GAAG,mBAAS,CAAC;AACpC,CAAC,EALgB,SAAS,yBAAT,SAAS,QAKzB"}

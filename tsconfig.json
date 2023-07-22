@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "lib": ["ES5", "ES6"],
+    "target": "ES2019",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
+    "importHelpers": true,
+    "sourceMap": true,
+    "pretty": true,
     "moduleResolution": "node",
     "baseUrl": ".",
     "declaration": true,
@@ -13,5 +17,5 @@
       "optix.ts/*": ["*"]
     }
   },
-  "include": ["src", "./dist/index.js"]
+  "include": ["src"]
 }

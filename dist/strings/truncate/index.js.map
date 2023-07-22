@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/strings/truncate/index.ts"],"names":[],"mappings":";;;AAAA;;;;;;;;;;;;;GAaG;AACH,SAAgB,cAAc,CAAC,GAAW,EAAE,SAAiB;IAC3D,OAAO,GAAG,CAAC,MAAM,GAAG,SAAS,CAAC,CAAC,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,EAAE,SAAS,CAAC,GAAG,KAAK,CAAC,CAAC,CAAC,GAAG,CAAC;AACxE,CAAC;AAFD,wCAEC"}

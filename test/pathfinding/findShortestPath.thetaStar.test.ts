@@ -1,6 +1,6 @@
 import { PathfindingUtils } from "../../src";
 import { generateConnectionArray } from "../../src/pathfinding/generateConnectionArray";
-import { Connection, PathfindingAlgorithm, Point } from "../../src/types";
+import { Connection, PathfindingAlgorithm, Point } from "../../types/types";
 
 describe("PathfindingUtils.findShortestPath.thetaStar", () => {
   it("should find a valid path in a complex graph with obstacles", () => {

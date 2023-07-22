@@ -23,3 +23,4 @@ var PathfindingUtils;
     PathfindingUtils.thetaStar = thetaStar_1.thetaStar;
     PathfindingUtils.generateConnections = generateConnectionArray_1.generateConnectionArray;
 })(PathfindingUtils || (exports.PathfindingUtils = PathfindingUtils = {}));
+//# sourceMappingURL=index.js.map

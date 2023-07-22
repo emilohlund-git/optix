@@ -35,3 +35,4 @@ var StringUtils;
     StringUtils.hasSequential = hasSequential_1.hasSequentialCharacters;
     StringUtils.isRepeating = isRepeating_1.hasRepeatedCharacters;
 })(StringUtils || (exports.StringUtils = StringUtils = {}));
+//# sourceMappingURL=index.js.map

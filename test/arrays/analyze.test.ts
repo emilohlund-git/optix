@@ -1,6 +1,6 @@
 import { ArrayUtils } from "../../src";
-import { analyzeNumericArray } from "../../src/arrays/analyzeData";
-import { AnalyzeDataResult, NumericObject } from "../../src/types";
+import { analyzeNumericArray } from "../../src/arrays/analyzeData/analyzeData";
+import { AnalyzeDataResult } from "../../src/arrays/analyzeData/interfaces/AnalyzeDataResult";
 
 describe('ArrayUtils.analyze', () => {
   it('should analyze an array of numbers and return the correct analysis result', () => {
@@ -41,7 +41,7 @@ describe('ArrayUtils.analyze', () => {
       { product: 'Widget', sales: 1200, revenue: 24000 },
       { product: 'Gadget', sales: 800, revenue: 32000 },
       { product: 'Doodad', sales: 1600, revenue: 12800 },
-    ] as NumericObject[];
+    ];
 
     const analysisResults = ArrayUtils.analyze(salesData);
 

@@ -1,7 +1,7 @@
+import { createGraphNode as _createGraphNode } from "../pathfinding/utils/createGraphNode";
+import { createGraphNodes as _createGraphNodes } from "../pathfinding/utils/createGraphNodes";
+import { generatePointId as _generatePointId } from "../pathfinding/utils/generatePointId";
 import { compareValues } from "./compareValues";
-import { createGraphNode as _createGraphNode } from "./createGraphNode";
-import { createGraphNodes as _createGraphNodes } from "./createGraphNodes";
-import { generatePointId as _generatePointId } from "./generatePointId";
 
 /**
  * @namespace InternalUtils
