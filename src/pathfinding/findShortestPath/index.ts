@@ -81,7 +81,7 @@ export function findShortestPath<T extends Point>(
 ): Point[] {
   const {
     heuristic = defaultHeuristic,
-    algorithm = PathfindingAlgorithm.Astar
+    algorithm = 'A*'
   } = options;
 
   const createDataFn = (id: GraphNodeId) => {
@@ -101,7 +101,7 @@ export function findShortestPath<T extends Point>(
     return [];
   }
 
-  return algorithm === PathfindingAlgorithm.Astar
+  return algorithm === 'A*'
     ? aStar(startNode, goalNode, heuristic)
     : thetaStar(startNode, goalNode, obstacles, heuristic);
 }

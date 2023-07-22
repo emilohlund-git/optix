@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/emilohlund-git/optix.git"
   },
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Utility library for TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

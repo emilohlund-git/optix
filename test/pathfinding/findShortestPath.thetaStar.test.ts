@@ -1,6 +1,5 @@
-import { PathfindingUtils } from "../../src";
+import { Connection, PathfindingUtils, Point } from "../../src";
 import { generateConnectionArray } from "../../src/pathfinding/generateConnectionArray";
-import { Connection, PathfindingAlgorithm, Point } from "../../types/types";
 
 describe("PathfindingUtils.findShortestPath.thetaStar", () => {
   it("should find a valid path in a complex graph with obstacles", () => {
@@ -30,7 +29,7 @@ describe("PathfindingUtils.findShortestPath.thetaStar", () => {
     ]
 
     const result = PathfindingUtils.findShortestPath(startData, goalData, connections, obstacles, {
-      algorithm: PathfindingAlgorithm.Theta
+      algorithm: 'Theta*'
     });
 
     console.log(result);
