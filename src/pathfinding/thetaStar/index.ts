@@ -72,18 +72,18 @@ export function thetaStar<T extends Point>(
   obstacles: Point[],
   heuristic: HeuristicFunction<T>,
 ): Point[] {
-  const openList: PathfindingNode<T>[] = [];
+  const cameFrom: GraphNodeMap<T> = new Map<GraphNodeId, GraphNode<T>>();
+  const openSet: PathfindingNode<T>[] = [];
   const closedSet: Set<GraphNodeId> = new Set();
-  const cameFrom: GraphNodeMap<T> = new Map();
-  let obstacleGrid: boolean[][] = [];
 
-  const width = Math.max(...obstacles.map((point) => point.x), start.data.x, goal.data.x) + 1;
-  const height = Math.max(...obstacles.map((point) => point.y), start.data.y, goal.data.y) + 1;
+  const allPoints: Point[] = [...obstacles, start.data, goal.data];
+  const width = Math.max(...allPoints.map(point => point.x)) + 1;
+  const height = Math.max(...allPoints.map(point => point.y)) + 1;
 
-  obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
+  const obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
 
   // Mark obstacle cells in the grid
-  obstacles.forEach(({ y, x }) => {
+  obstacles.forEach(({ x, y }) => {
     obstacleGrid[y][x] = true;
   });
 
@@ -162,13 +162,13 @@ export function thetaStar<T extends Point>(
     h: heuristic(start, goal),
     parent: null,
   };
-  openList.push(startNode);
+  openSet.push(startNode);
 
-  while (openList.length > 0) {
+  while (openSet.length > 0) {
     // Sort the open list by f value (lowest f value first)
-    openList.sort((a, b) => a.f - b.f);
+    openSet.sort((a, b) => a.f - b.f);
 
-    const current = openList.shift()!.node;
+    const current = openSet.shift()!.node;
     closedSet.add(current.id);
 
     if (current === goal) {
@@ -181,7 +181,7 @@ export function thetaStar<T extends Point>(
       }
 
       // Check if the neighbor is an obstacle and skip it
-      if (obstacleGrid[neighbor.data.y][neighbor.data.x]) {
+      if (obstacleGrid[neighbor.data.x][neighbor.data.y]) {
         continue;
       }
 
@@ -195,13 +195,13 @@ export function thetaStar<T extends Point>(
         parent: null,
       };
 
-      const openNeighbor = openList.find((node) => node.node.id === neighborId);
+      const openNeighbor = openSet.find((node) => node.node.id === neighborId);
 
       if (!openNeighbor || gFromStart < openNeighbor.g) {
         cameFrom.set(neighborId, current);
 
         if (!openNeighbor) {
-          openList.push(neighborNode);
+          openSet.push(neighborNode);
         } else {
           openNeighbor.g = gFromStart;
           openNeighbor.f = gFromStart + openNeighbor.h;

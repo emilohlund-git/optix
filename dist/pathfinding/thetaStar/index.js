@@ -63,15 +63,15 @@ const __1 = require("..");
  * console.log(shortestPath); // Output: [ { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 2, y: 1 }, { x: 3, y: 2 }, { x: 4, y: 3 }, { x: 5, y: 4 }, { x: 5, y: 5 } ]
  */
 function thetaStar(start, goal, obstacles, heuristic) {
-    const openList = [];
-    const closedSet = new Set();
     const cameFrom = new Map();
-    let obstacleGrid = [];
-    const width = Math.max(...obstacles.map((point) => point.x), start.data.x, goal.data.x) + 1;
-    const height = Math.max(...obstacles.map((point) => point.y), start.data.y, goal.data.y) + 1;
-    obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
+    const openSet = [];
+    const closedSet = new Set();
+    const allPoints = [...obstacles, start.data, goal.data];
+    const width = Math.max(...allPoints.map(point => point.x)) + 1;
+    const height = Math.max(...allPoints.map(point => point.y)) + 1;
+    const obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
     // Mark obstacle cells in the grid
-    obstacles.forEach(({ y, x }) => {
+    obstacles.forEach(({ x, y }) => {
         obstacleGrid[y][x] = true;
     });
     /**
@@ -140,11 +140,11 @@ function thetaStar(start, goal, obstacles, heuristic) {
         h: heuristic(start, goal),
         parent: null,
     };
-    openList.push(startNode);
-    while (openList.length > 0) {
+    openSet.push(startNode);
+    while (openSet.length > 0) {
         // Sort the open list by f value (lowest f value first)
-        openList.sort((a, b) => a.f - b.f);
-        const current = openList.shift().node;
+        openSet.sort((a, b) => a.f - b.f);
+        const current = openSet.shift().node;
         closedSet.add(current.id);
         if (current === goal) {
             return __1.PathfindingUtils.reconstructPath(current, cameFrom);
@@ -154,7 +154,7 @@ function thetaStar(start, goal, obstacles, heuristic) {
                 continue;
             }
             // Check if the neighbor is an obstacle and skip it
-            if (obstacleGrid[neighbor.data.y][neighbor.data.x]) {
+            if (obstacleGrid[neighbor.data.x][neighbor.data.y]) {
                 continue;
             }
             const gFromStart = calculateCost(start, neighbor);
@@ -165,11 +165,11 @@ function thetaStar(start, goal, obstacles, heuristic) {
                 h: heuristic(neighbor, goal),
                 parent: null,
             };
-            const openNeighbor = openList.find((node) => node.node.id === neighborId);
+            const openNeighbor = openSet.find((node) => node.node.id === neighborId);
             if (!openNeighbor || gFromStart < openNeighbor.g) {
                 cameFrom.set(neighborId, current);
                 if (!openNeighbor) {
-                    openList.push(neighborNode);
+                    openSet.push(neighborNode);
                 }
                 else {
                     openNeighbor.g = gFromStart;
