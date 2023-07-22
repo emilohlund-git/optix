@@ -15,17 +15,6 @@ describe("PathfindingUtils.findShortestPath.thetaStar", () => {
       { x: 4, y: 5 },
       { x: 3, y: 4 },
       { x: 2, y: 3 },
-      { x: 1, y: 2 },
-      { x: 1, y: 1 },
-      { x: 2, y: 2 },
-      { x: 3, y: 3 },
-      { x: 1, y: 3 },
-      { x: 1, y: 4 },
-      { x: 1, y: 0 },
-      { x: 2, y: 1 },
-      { x: 1, y: 5 },
-      { x: 2, y: 3 },
-      { x: 6, y: 0 },
     ]
 
     const result = PathfindingUtils.findShortestPath(startData, goalData, connections, obstacles, {

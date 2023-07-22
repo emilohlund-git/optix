@@ -77,18 +77,15 @@ export function thetaStar<T extends Point>(
   const cameFrom: GraphNodeMap<T> = new Map();
   let obstacleGrid: boolean[][] = [];
 
-  if (obstacles.length > 0) {
-    const allPoints: Point[] = [...obstacles, start.data, goal.data];
-    const width = Math.max(...allPoints.map(point => point.x)) + 1;
-    const height = Math.max(...allPoints.map(point => point.y)) + 1;
+  const width = Math.max(...obstacles.map((point) => point.x), start.data.x, goal.data.x) + 1;
+  const height = Math.max(...obstacles.map((point) => point.y), start.data.y, goal.data.y) + 1;
 
-    obstacleGrid = Array.from({ length: width }, () => Array(height).fill(false));
+  obstacleGrid = Array.from({ length: height }, () => Array(width).fill(false));
 
-    // Mark obstacle cells in the grid
-    obstacles.forEach(({ x, y }) => {
-      obstacleGrid[y][x] = true;
-    });
-  }
+  // Mark obstacle cells in the grid
+  obstacles.forEach(({ y, x }) => {
+    obstacleGrid[y][x] = true;
+  });
 
   /**
    * Checks if there is a line of sight between two nodes, i.e., if the path between them is unobstructed by obstacles.
