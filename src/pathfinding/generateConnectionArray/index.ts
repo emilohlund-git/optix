@@ -4,6 +4,7 @@ import { Point } from "../interfaces/Point";
 /**
  * @namespace PathfindingUtils
  * 
+ * @function
  * Generates a connection array for a grid-based map with obstacles.
  * The map has dimensions specified by the `width` and `height` parameters,
  * and the obstacles are defined by an array of points representing their positions.

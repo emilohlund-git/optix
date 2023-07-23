@@ -1,12 +1,10 @@
 import { InternalUtils } from "../../utils";
-import { aStar } from "../aStar";
-import { heuristic as defaultHeuristic } from "../heuristic";
+import { AStar } from "../aStar/AStar";
 import { Connection } from "../interfaces/Connection";
 import { GraphNodeId } from "../interfaces/GraphNodeId";
 import { GraphNodeMap } from "../interfaces/GraphNodeMap";
 import { Point } from "../interfaces/Point";
-import { thetaStar } from "../thetaStar";
-import { PathfindingAlgorithm } from "./interfaces/PathfindingAlgorithm";
+import { ThetaStar } from "../thetaStar/ThetaStar";
 import { PathfindingOptions } from "./interfaces/PathfindingOptions";
 
 /**
@@ -81,7 +79,7 @@ export function findShortestPath<T extends Point>(
   callback?: (currentPath: Point[]) => void,
 ): Point[] {
   const {
-    heuristic = defaultHeuristic,
+    heuristic = 'euclidean',
     algorithm = 'A*'
   } = options;
 
@@ -106,7 +104,15 @@ export function findShortestPath<T extends Point>(
   const width = dimensions[0] + 1;
   const height = dimensions[1] + 1;
 
-  return algorithm === 'A*'
-    ? aStar(startNode, goalNode, heuristic, callback)
-    : thetaStar(startNode, goalNode, width, height, obstacles, heuristic, callback);
+  // Mapping of algorithm names to pathfinding classes
+  const algorithmMapping = {
+    'A*': AStar,
+    'Theta*': ThetaStar,
+  };
+
+  // Select the appropriate pathfinding class based on the chosen algorithm
+  const PathFinderClass = algorithmMapping[algorithm] || AStar;
+
+  // Perform the search using the selected pathfinding class
+  return new PathFinderClass(startNode, goalNode, width, height, obstacles, heuristic, callback).performSearch();
 }

@@ -1,4 +1,4 @@
-import { HeuristicFunction } from "../../interfaces/HeuristicFunction";
+import { HeuristicType } from "../../interfaces/HeuristicType";
 import { PathfindingAlgorithm } from "./PathfindingAlgorithm";
 
 /**
@@ -20,7 +20,7 @@ export interface PathfindingOptions<T> {
    * @param {GraphNode<T>} goal - The goal graph node.
    * @returns {number} - The estimated cost from the current node to the goal.
    */
-  heuristic?: HeuristicFunction<T>,
+  heuristic?: HeuristicType,
   /**
    * The pathfinding algorithm to be used for finding the shortest path.
    * The available options are defined in the `PathfindingAlgorithm` enum.

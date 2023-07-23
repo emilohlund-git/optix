@@ -1,9 +1,9 @@
-import { aStar as _aStar } from "./aStar";
+import { AStar as _aStar } from "./aStar/AStar";
 import { findShortestPath as _findShortestPath } from "./findShortestPath";
 import { generateConnectionArray } from "./generateConnectionArray";
 import { heuristic as _heuristic } from "./heuristic";
 import { reconstructPath as _reconstructPath } from "./reconstructPath";
-import { thetaStar as _thetaStar } from './thetaStar';
+import { ThetaStar as _thetaStar } from './thetaStar/ThetaStar';
 
 /**
  * @namespace PathfindingUtils

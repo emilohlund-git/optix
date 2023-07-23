@@ -1,4 +1,5 @@
 import { GraphNode } from "./GraphNode";
+import { HeuristicType } from "./HeuristicType";
 
 /**
  * Heuristic Function type.
@@ -6,4 +7,4 @@ import { GraphNode } from "./GraphNode";
  * @param goal - The goal node to reach.
  * @returns The estimated cost from the current node to the goal node.
  */
-export type HeuristicFunction<T> = (current: GraphNode<T>, goal: GraphNode<T>) => number;
+export type HeuristicFunction<T> = (current: GraphNode<T>, goal: GraphNode<T>, heuristicType: HeuristicType) => number;
