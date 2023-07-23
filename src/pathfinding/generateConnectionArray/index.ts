@@ -16,48 +16,36 @@ import { Point } from "../interfaces/Point";
  */
 export function generateConnectionArray(width: number, height: number, obstacles: Point[]): Connection[] {
   const connectionArray: Connection[] = [];
-  const obstacleGrid: boolean[][] = Array.from({ length: width }, () => Array(height).fill(false));
 
-  // Mark obstacle cells in the grid
-  obstacles.forEach(({ x, y }) => {
-    obstacleGrid[x][y] = true;
-  });
+  // Create an obstacle grid using a Set for efficient lookups
+  const obstacleSet: Set<string> = new Set(obstacles.map(({ x, y }) => `${x},${y}`));
 
-  /// Helper function to check if a neighbor is valid (within grid boundaries and not an obstacle)
-  function validNeighbor(x: number, y: number): boolean {
-    return x >= 0 && x < width && y >= 0 && y < height && !obstacleGrid[x][y];
+  // Helper function to check if a neighbor is valid (within grid boundaries and not an obstacle)
+  function isValidNeighbor(x: number, y: number): boolean {
+    return x >= 0 && x < width && y >= 0 && y < height && !obstacleSet.has(`${x},${y}`);
   }
 
-  // Helper function to generate connection array for a chunk of rows
-  function generateChunkConnectionArray(startY: number, endY: number): Connection[] {
-    const chunkConnectionArray: Connection[] = [];
-
-    for (let x = 0; x < width; x++) {
-      for (let y = startY; y < endY; y++) {
-        if (validNeighbor(x - 1, y)) {
-          chunkConnectionArray.push([`${x},${y}`, `${x - 1},${y}`]);
-        }
-        if (validNeighbor(x + 1, y)) {
-          chunkConnectionArray.push([`${x},${y}`, `${x + 1},${y}`]);
-        }
-        if (validNeighbor(x, y - 1)) {
-          chunkConnectionArray.push([`${x},${y}`, `${x},${y - 1}`]);
-        }
-        if (validNeighbor(x, y + 1)) {
-          chunkConnectionArray.push([`${x},${y}`, `${x},${y + 1}`]);
-        }
-      }
+  // Helper function to generate connections for a given cell
+  function generateConnectionsForCell(x: number, y: number): void {
+    if (isValidNeighbor(x - 1, y)) {
+      connectionArray.push([`${x},${y}`, `${x - 1},${y}`]);
     }
-
-    return chunkConnectionArray;
+    if (isValidNeighbor(x + 1, y)) {
+      connectionArray.push([`${x},${y}`, `${x + 1},${y}`]);
+    }
+    if (isValidNeighbor(x, y - 1)) {
+      connectionArray.push([`${x},${y}`, `${x},${y - 1}`]);
+    }
+    if (isValidNeighbor(x, y + 1)) {
+      connectionArray.push([`${x},${y}`, `${x},${y + 1}`]);
+    }
   }
 
-  // Split the grid generation process into chunks for parallel processing
-  const CHUNK_SIZE = 15; // Adjust the chunk size as needed
-  for (let startY = 0; startY < height; startY += CHUNK_SIZE) {
-    const endY = Math.min(startY + CHUNK_SIZE, height);
-    const chunkConnectionArray = generateChunkConnectionArray(startY, endY);
-    connectionArray.push(...chunkConnectionArray);
+  // Generate connections for each cell in the grid
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      generateConnectionsForCell(x, y);
+    }
   }
 
   return connectionArray;
