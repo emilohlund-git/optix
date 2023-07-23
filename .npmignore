@@ -6,3 +6,5 @@ node_modules
 **/tsconfig.json
 **/webpack.config.json
 src
+.vscode
+visualization

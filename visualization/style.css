@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+  background-size: cover;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(20, 20px);
+  grid-gap: 1px;
+  background: rgba(241, 241, 241, 0.3);
+  width: "100%";
+  height: "100%";
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.grid-cell {
+  background-color: #e7e7e7;
+  transition: background-color 0.2s;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.obstacle {
+  background-color: #e74c3c;
+}
+
+.shortest-path-node {
+  background-color: #2ecc71;
+  animation: pulsePathNode 1s infinite;
+}
+
+.start-node {
+  background-color: #3498db;
+  border-radius: 50%;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  transform-origin: center center;
+}
+
+.goal-node {
+  background-color: #e74c3c;
+  border-radius: 50%;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  transform-origin: center center;
+}
+
+@keyframes pulseStartNode {
+  0%,
+  100% {
+    transform: scale(1) rotateX(0) rotateY(0) rotateZ(0);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+      0 0 40px rgba(52, 152, 219, 0.5);
+  }
+  50% {
+    transform: scale(1.1) rotateX(30deg) rotateY(-45deg) rotateZ(15deg);
+    box-shadow: 0 0 40px rgba(52, 152, 219, 1), 0 0 80px rgba(52, 152, 219, 0.8);
+  }
+}
+
+@keyframes pulseGoalNode {
+  0%,
+  100% {
+    transform: scale(1) rotateX(0) rotateY(0) rotateZ(0);
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.8), 0 0 40px rgba(231, 76, 60, 0.5);
+  }
+  50% {
+    transform: scale(0.9) rotateX(-30deg) rotateY(45deg) rotateZ(-15deg);
+    box-shadow: 0 0 40px rgba(231, 76, 60, 1), 0 0 80px rgba(231, 76, 60, 0.8);
+  }
+}
+
+@keyframes pulseObstacle {
+  0%,
+  100% {
+    transform: scale(1) rotateX(0) rotateY(0) rotateZ(0);
+  }
+  50% {
+    transform: scale(0.8) rotateX(30deg) rotateY(-30deg) rotateZ(15deg);
+  }
+}
+
+/* Add some hover effect to the grid cells */
+.grid-cell:not(.start-node):not(.goal-node):not(.obstacle):hover {
+  background-color: #cacaca;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
