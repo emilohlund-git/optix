@@ -1,4 +1,4 @@
-import { HeuristicType } from "../../interfaces/HeuristicType";
+import { HeuristicType } from "../../heuristic/interfaces/HeuristicType";
 import { PathfindingAlgorithm } from "./PathfindingAlgorithm";
 
 /**

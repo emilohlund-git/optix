@@ -1,4 +1,4 @@
-import { GraphNode } from "./GraphNode";
+import { GraphNode } from "../../interfaces/GraphNode";
 import { HeuristicType } from "./HeuristicType";
 
 /**

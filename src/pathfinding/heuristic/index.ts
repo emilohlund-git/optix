@@ -1,6 +1,6 @@
 import { GraphNode } from "../interfaces/GraphNode";
-import { HeuristicType } from "../interfaces/HeuristicType";
 import { Point } from "../interfaces/Point";
+import { HeuristicType } from "./interfaces/HeuristicType";
 
 /**
  * @namespace PathfindingUtils

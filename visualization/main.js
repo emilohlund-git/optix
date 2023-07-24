@@ -13,8 +13,14 @@ window.onload = () => {
     []
   );
 
+  function getCellIndex(cellId) {
+    const [_, row, col] = cellId.split("-").map(Number);
+    return { row, col };
+  }
+
   const gridContainer = document.getElementById("grid-container");
   const obstacles = [];
+  let isDrawing = false;
 
   let draggingStartNode = false;
   let draggingGoalNode = false;
@@ -39,36 +45,7 @@ window.onload = () => {
         cell.classList.add("grid-cell");
         cell.style.width = `${CELL_SIZE}px`;
         cell.style.height = `${CELL_SIZE}px`;
-
-        cell.addEventListener("click", () => {
-          toggleObstacle(j, i);
-        });
-
-        // Set up the event listeners for dragging start and goal nodes
-        cell.addEventListener("mousedown", (e) => {
-          if (cell.classList.contains("start-node")) {
-            draggingStartNode = true;
-          } else if (cell.classList.contains("goal-node")) {
-            draggingGoalNode = true;
-          }
-        });
-
-        cell.addEventListener("mouseup", () => {
-          draggingStartNode = false;
-          draggingGoalNode = false;
-        });
-
-        cell.addEventListener("mousemove", (e) => {
-          if (draggingStartNode) {
-            startData.x = j;
-            startData.y = i;
-            drawGrid();
-          } else if (draggingGoalNode) {
-            goalData.x = j;
-            goalData.y = i;
-            drawGrid();
-          }
-        });
+        cell.id = `cell-${i}-${j}`;
 
         gridContainer.appendChild(cell);
       }
@@ -113,6 +90,50 @@ window.onload = () => {
       gridContainer.children[goalData.y * GRID_SIZE + goalData.x];
     goalCell.classList.add("goal-node");
   }
+
+  // Set up the event listeners for continuous obstacle painting
+  gridContainer.addEventListener("mousedown", (e) => {
+    if (e.target.classList.contains("grid-cell")) {
+      isDrawing = true;
+      toggleObstacle(getCellIndex(e.target.id));
+    }
+  });
+
+  gridContainer.addEventListener("mouseover", (e) => {
+    if (isDrawing && e.target.classList.contains("grid-cell")) {
+      toggleObstacle(getCellIndex(e.target.id));
+    }
+  });
+
+  gridContainer.addEventListener("mouseup", () => {
+    isDrawing = false;
+  });
+
+  // Set up the event listeners for dragging start and goal nodes
+  gridContainer.addEventListener("mousedown", (e) => {
+    if (e.target.classList.contains("start-node")) {
+      draggingStartNode = true;
+    } else if (e.target.classList.contains("goal-node")) {
+      draggingGoalNode = true;
+    }
+  });
+
+  gridContainer.addEventListener("mouseup", () => {
+    draggingStartNode = false;
+    draggingGoalNode = false;
+  });
+
+  gridContainer.addEventListener("mousemove", (e) => {
+    if (draggingStartNode && e.target.classList.contains("grid-cell")) {
+      startData.x = getCellIndex(e.target.id).col;
+      startData.y = getCellIndex(e.target.id).row;
+      drawGrid();
+    } else if (draggingGoalNode && e.target.classList.contains("grid-cell")) {
+      goalData.x = getCellIndex(e.target.id).col;
+      goalData.y = getCellIndex(e.target.id).row;
+      drawGrid();
+    }
+  });
 
   drawGrid();
 };

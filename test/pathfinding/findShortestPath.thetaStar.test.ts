@@ -25,7 +25,7 @@ describe("PathfindingUtils.findShortestPath.thetaStar", () => {
     const startData: Point = { x: 0, y: 0 };
     const goalData: Point = { x: 19, y: 19 };
 
-    const connections: Connection[] = generateConnectionArray(20, 20, []);
+    const connections: Connection[] = generateConnectionArray(40, 40, []);
 
     const obstacles: Point[] = [
       { x: 14, y: 14 },
@@ -45,8 +45,6 @@ describe("PathfindingUtils.findShortestPath.thetaStar", () => {
     const result = PathfindingUtils.findShortestPath(startData, goalData, connections, obstacles, {
       algorithm: 'Theta*'
     });
-
-    console.log(result);
 
     expect(result).toBeDefined();
     expect(Array.isArray(result)).toBe(true);

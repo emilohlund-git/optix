@@ -1,6 +1,6 @@
 import { GraphNode } from "../interfaces/GraphNode";
 import { Point } from "../interfaces/Point";
-import { PathFinder } from "../pathFinder/PathFinder";
+import { PathFinder } from "../pathFinder";
 
 /**
  * @namespace PathfindingUtils

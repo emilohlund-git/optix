@@ -1,10 +1,9 @@
 import { InternalUtils } from "../../utils";
-import { AStar } from "../aStar/AStar";
 import { Connection } from "../interfaces/Connection";
 import { GraphNodeId } from "../interfaces/GraphNodeId";
 import { GraphNodeMap } from "../interfaces/GraphNodeMap";
 import { Point } from "../interfaces/Point";
-import { ThetaStar } from "../thetaStar/ThetaStar";
+import { ThetaStar } from "../thetaStar";
 import { PathfindingOptions } from "./interfaces/PathfindingOptions";
 
 /**
@@ -25,7 +24,7 @@ import { PathfindingOptions } from "./interfaces/PathfindingOptions";
  * @param {Point[]} obstacles - An array of points representing the positions of obstacles. Only used for the Theta* algorithm.
  * @param {PathfindingOptions<T>} [options] - An optional object containing pathfinding options.
  * @param {HeuristicFunction<T>} [options.heuristic=defaultHeuristic] - The heuristic function to estimate the cost from a node to the goal node. Default is the Euclidean distance.
- * @param {PathfindingAlgorithm} [options.algorithm=PathfindingAlgorithm.Astar] - The pathfinding algorithm to use. Default is A*.
+ * @param {PathfindingAlgorithm} [options.algorithm="Theta*"] - The pathfinding algorithm to use. Default is A*.
  * @returns {Point[]} An array of points representing the path from `start` to `goal` (or an empty array if no path is found).
  *
  * @template T - A generic type representing the data associated with the graph nodes. It must extend the `Point` interface.
@@ -56,7 +55,7 @@ import { PathfindingOptions } from "./interfaces/PathfindingOptions";
  * const startingPoint: Point = { x: 0, y: 0 };
  * const goal: Point = { x: 2, y: 2 };
  *
- * // Perform A* pathfinding algorithm using the custom heuristic function
+ * // Perform Theta* pathfinding algorithm using the custom heuristic function
  * const path = findShortestPath(startingPoint, goal, connections, obstacles, { heuristic: manhattanHeuristic });
  *
  * console.log(path);
@@ -76,11 +75,10 @@ export function findShortestPath<T extends Point>(
   connections: Connection[],
   obstacles: Point[],
   options: PathfindingOptions<T> = {},
-  callback?: (currentPath: Point[]) => void,
 ): Point[] {
   const {
     heuristic = 'euclidean',
-    algorithm = 'A*'
+    algorithm = 'Theta*'
   } = options;
 
   const createDataFn = (id: GraphNodeId) => {
@@ -106,13 +104,12 @@ export function findShortestPath<T extends Point>(
 
   // Mapping of algorithm names to pathfinding classes
   const algorithmMapping = {
-    'A*': AStar,
     'Theta*': ThetaStar,
   };
 
   // Select the appropriate pathfinding class based on the chosen algorithm
-  const PathFinderClass = algorithmMapping[algorithm] || AStar;
+  const PathFinderClass = algorithmMapping[algorithm];
 
   // Perform the search using the selected pathfinding class
-  return new PathFinderClass(startNode, goalNode, width, height, obstacles, heuristic, callback).performSearch();
+  return new PathFinderClass(startNode, goalNode, width, height, obstacles, heuristic).performSearch();
 }
